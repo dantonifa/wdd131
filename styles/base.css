@@ -107,10 +107,10 @@
 		text-decoration: none;
 	}
 	
-	.nav a:hover {
+	nav a:hover {
 		text-decoration:overline;
 	}
-	.main{
+	main{
 		display: grid;
 		grid-template-columns: 1fr 1fr;
 		height:max-content
@@ -170,5 +170,4 @@
 		justify-content: center;
 		font-weight: bold;
 	}
-	
 }
