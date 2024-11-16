@@ -2,26 +2,32 @@
 <html lang="en-US">
 <head>
     <meta charset="UTF-8">
-    <meta name= "viewport" content="width= device-width, initial-scale=1.0">
-    <title>"WDD 131 - Dynamic Web Fundamentals - David Antonio Fajardo"</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Sour+Gummy:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>WDD 131 - Dynamic Web Fundamentals - David Antonio Fajardo</title>
     <meta name="description" content="WDD 131: Dynamic Web Fundamentals-David Antonio Fajardo, course assignment portal">
     <meta name="author" content="David Antonio Fajardo">
     <link rel="stylesheet" href="styles/base.css">
+    <script src="scripts/getdates.js" defer></script>
 </head>
 <body>
-    <div class= "header">
+    <header>
         <h1>
             WDD 131 - Dynamic Web Fundamentals - David Antonio Fajardo  
         </h1>
-        <div class= "nav">
+        <nav>
             <ul>
                 <li><a href="https://www.linkedin.com/feed/">LinkedIn</a></li>
                 <li><a href="https://byui.instructure.com/">I-Learn</a></li>
                 <li><a href="https://www.churchofjesuschrist.org/study/scriptures/bofm/mosiah/18?lang=eng#:~:text=8%20And%20it,abundantly%20upon%20you%3F">Scripture</a></li>
                 <li><a href="Final Project">Final Project</a></li>    
             </ul>
-        </div>
-    </div>
+        </nav>
+    </header>
             
     <div class= "main">
         <section class="card">
@@ -66,12 +72,15 @@
     </div>
     <footer>
         <p>
-            "©"
+            ©
             <span id="currentyear"></span>
-            " | David Antonio Fajardo | Honduras"
+            | David Antonio Fajardo | Honduras
+        </p>
+        <p>
+            Last Modified: 
         </p>
         <p id="lastModified">
-
+            <script>document.write(document.lastModified);</script>
         </p>
 
     </footer>
