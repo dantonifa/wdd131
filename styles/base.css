@@ -61,12 +61,12 @@
 		font-family: "Lato", sans-serif;
 		display: grid;
 		background-color:aliceblue;
-		grid-template-rows:1fr, 10fr, 1fr;
+		grid-template-rows:1fr 5fr 1fr;
 	}
-	.header {
+	header {
 		background-color: rgba(73, 240, 240, 0.716);
 		display: grid;
-		grid-template-rows: 1fr, 1fr;
+		grid-template-rows: 1fr 1fr;
 		align-items: center;
 		justify-content: center;
 		padding: 20px;
@@ -78,21 +78,17 @@
 		grid-row-end:2;
 		font-size: 2rem;
 	}
-	.nav {
+	nav {
 		display:grid;
 		grid-row-start:2;
 		grid-row-end:3;
-		grid-template-columns:25%, 25%, 25%, 25%;
+		width: 100%;
 		background-color: yellow;
 		margin: 0 auto;
 	}
 
-	.nav ul {
+	nav ul {
 		list-style-type: none;
-		display: webkit-flex;
-		display:moz-flex;
-		display:ms-flex;
-		display:o-flex;
 		display:flex;
 		justify-content: space-around;
 		padding: 0;
@@ -100,7 +96,7 @@
 	}
 	
 
-	.nav ul li a {
+	nav ul li a {
 		display:grid;
 		color: black;
 		text-align: center;
@@ -117,6 +113,7 @@
 	.main{
 		display: grid;
 		grid-template-columns: 1fr 1fr;
+		height:max-content
 	}
 	h2 {
 		font-size: 2.5rem;
@@ -161,7 +158,7 @@
 	}
 	footer {
 		background-color: rgba(73, 240, 240, 0.716);
-		display: flex;
+		display: list-item;
 		align-items: center;
 		justify-content: center;
 		padding: 20px;
@@ -169,26 +166,9 @@
 	}
 	footer p {
 		font-size: 1.5rem;
+		text-align: center;
+		justify-content: center;
+		font-weight: bold;
 	}
-	footer a {
-		color: white;
-		text-decoration: none;
-	}
-	footer a:hover {
-		text-decoration: underline;
-	}
-	footer a:active {
-		text-decoration: underline;
-	}
-	footer a:visited {
-		color: white;
-	}
-	footer a:link {
-		color: white;
-	}
-
-	
-	
 	
 }
-
