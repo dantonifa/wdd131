@@ -61,7 +61,7 @@
 		font-family: "Lato", sans-serif;
 		display: grid;
 		background-color:aliceblue;
-		grid-template-rows:1fr 5fr 1fr;
+		grid-template-rows:1fr 3fr 1fr;
 	}
 	header {
 		background-color: rgba(73, 240, 240, 0.716);
