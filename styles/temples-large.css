@@ -30,12 +30,12 @@
     #menu-button {
         display:none;
     }
-    #menu {
+    .menu {
         display:flex;
         font-size:40px;
         font-weight:bold;
     }
-    #menu a { 
+    .menu a { 
         display:inline-block;
         text-decoration: none;
         padding:1em;
@@ -43,10 +43,10 @@
         margin-bottom:auto;
         color: blue;
     }
-    #menu a:hover {
+    .menu a:hover {
         background-color: rgba(255, 255, 255, 0.969);
     }
-    #menu a.home {
+    .menu a.home {
         background-color:yellow;
     }
    
@@ -100,5 +100,14 @@
     #main-temples #main-temples-3{
         display:flex;
         justify-content:space-between;
+    }
+    footer{
+        background-color:azure;
+    }
+    footer p{
+        text-align:center;
+        font-size:2.5em;
+        color:blue;
+        font-weight:bold;
     }
 }
