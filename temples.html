@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Sour+Gummy:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>TEMPLES ALBUM</title>
+    <meta name="description" content="WDD 131: Dynamic Web Fundamentals-David Antonio Fajardo, course assignment portal">
+    <meta name="author" content="David Antonio Fajardo">
+    <link rel="stylesheet" href="styles/temples.css">
+    <link rel="stylesheet" href="styles/temples-large.css">
+</head>
+<body>
+    <header>
+        <div id="heading">
+            <h1>
+                Temples Album
+            </h1>
+        </div>
+        <button type="button" id="menu-button" title="Menu"></button>
+        <nav>
+            <div class="menu">
+                <a href="#" class="home">Home</a>
+                <a href="#">Old</a>
+                <a href="#">New</a>
+                <a href="#">Large</a>
+                <a href="#">Small</a>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <div id="main-title">
+            <h2>
+                Home
+            </h2>
+        </div>
+        <div id="main-temples" class="main-temples">
+            <div id="main-temples-1">
+                <figure>
+                    <img src="images/st_george_utah_temple_exterior.jpeg" alt="St. George Utah Temple">
+                    <figcaption>St. George, Utah</figcaption>
+                </figure>
+                <figure>
+                    <img src="images/salt_lake_temple_lds.jpeg" alt="Salt Lake Temple">
+                    <figcaption>Salt Lake City, Utah</figcaption>
+                </figure>
+                <figure>
+                    <img src="images/manti_temple_lds.jpeg" alt="Manti Temple">
+                    <figcaption>Manti, Utah</figcaption>
+                </figure>
+            </div>
+            <div id="main-temples-2">
+                <figure>
+                    <img src="images/mesa_temple_reflection.webp" alt="Mesa Temple">
+                    <figcaption>Mesa, Arizona</figcaption>
+                </figure>
+                <figure>
+                    <img src="images/mexico_city_temple_lds.jpeg" alt="Mexico City Temple">
+                    <figcaption>Mexico City, Mexico</figcaption>
+                </figure>
+                <figure>
+                    <img src="images/las_vegas_temple_lds.jpeg" alt="Las Vegas Temple">
+                    <figcaption>Las Vegas, Nevada</figcaption>
+                </figure>
+            </div>
+            <div id="main-temples-3">
+                <figure>
+                    <img src="images/guatemala_city_guatemala_temple_lds.jpeg" alt="Guatemala City Guatemala Temple">
+                    <figcaption>Guatemala City, Guatemala</figcaption>
+                </figure>
+                <figure>
+                    <img src="images/tegucigalpa_honduras_temple_lds.webp" alt="Tegucigalpa Honduras Temple">
+                    <figcaption>Tegucigalpa, Honduras</figcaption>
+                </figure>
+                <figure>
+                    <img src="images/san_pedro_sula_honduras_temple_exteriors.jpeg" alt="San Pedro Sula Honduras Temple">
+                    <figcaption>San Pedro Sula, Honduras</figcaption>
+                </figure>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <p>
+            ©
+            <span id="currentyear"></span>
+            | David Antonio Fajardo | Honduras
+        </p>
+        <p>
+            Last Modified: 
+        </p>
+        <p id="lastModified">
+            <script>document.write(document.lastModified);</script>
+        </p>
+    </footer>
+    <script src="scripts/temples.js" defer></script>
+</body>
+</html>
