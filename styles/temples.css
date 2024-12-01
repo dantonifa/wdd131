@@ -1,0 +1,64 @@
+@media screen and (max-width: 720px) {
+    #menu-button {
+        font-size: 1.5rem;
+	    border: 0;
+	    background: none;
+	    color: #000;
+	}
+    #menu-button::before {
+        content: "☰";
+    }
+    #menu-button.open::before {
+        content: "❌";
+    }
+    .menu {
+        display:flex;
+        flex-direction:column;
+        justify-content:space-around;
+        list-style:none;
+        background-color:aliceblue;
+        color:blue;
+        font-size:40px;
+        font-weight:bold;
+    }
+    .menu a { 
+        display:none;
+        padding:1rem;
+        text-align:left;
+        text-decoration:none;
+        margin-bottom:auto;
+        color: blue;
+    }
+    .menu a:hover {
+        background-color: rgba(255, 255, 255, 0.969);
+        color:brown;
+        font-weight:bold;
+    }
+    /* when the button is clicked - the open class is toggled (added/removed) */
+    .open a {
+	    display: block;
+    }
+    .active::before { 
+	    content: "📍";  /* just a wayfinding symbol for the user */
+    }
+    .main-temples{
+        display:grid;
+        height:100%;
+    }
+    img{
+        height:auto;
+        max-width:100%;
+    }
+    figcaption{
+        text-align:center;
+        font-size:2em;
+        color:blue;
+        font-weight:bold;
+    }
+    footer p{
+        text-align:center;
+        font-size:1.5em;
+        color:blue;
+        font-weight:bold;
+    }
+}

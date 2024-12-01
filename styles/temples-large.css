@@ -1,0 +1,104 @@
+@media screen and (min-width: 721px) {
+    body {
+        display: grid;
+        grid-template-rows: 140px 1fr 1fr;
+        background-color: #f3f3f3;
+    }
+    header {
+        display: grid;
+        grid-template-columns: .3fr .7fr;
+        grid-row-start:1;
+        grid-row-end:2;
+        background-color: rgb(0, 229, 255);
+    }
+    #heading {
+        display:grid;
+        grid-column-start: 1;
+        grid-column-end: 2;
+        align-items:center;
+    }
+    #heading h1{
+        font-size:40px;
+        color:blue;
+        font-weight:bold;
+        margin-top:auto;
+        margin-bottom:auto;
+        margin-left:auto;
+        margin-right:auto;
+    }
+     /* hide hamburger button */
+    #menu-button {
+        display:none;
+    }
+    #menu {
+        display:flex;
+        font-size:40px;
+        font-weight:bold;
+    }
+    #menu a { 
+        display:inline-block;
+        text-decoration: none;
+        padding:1em;
+        margin-top:auto;
+        margin-bottom:auto;
+        color: blue;
+    }
+    #menu a:hover {
+        background-color: rgba(255, 255, 255, 0.969);
+    }
+    #menu a.home {
+        background-color:yellow;
+    }
+   
+    main {
+        display:grid;
+        grid-template-columns:1fr 1fr 1fr;
+        grid-row-start:2;
+        background-color: #f3f3f3;
+        margin: 0 auto;
+        width: 100%;
+        padding: 10px;
+    }
+    #main-title {
+        display:grid;
+        grid-column-start:1;
+        grid-column-end:4;
+        grid-row-start:2;
+        grid-row-end:3;
+        height:100px;
+        align-items:center;
+    }
+    #main-title h2{
+        grid-row-start:2;
+        grid-row-end:3;
+        text-align:center;
+        color:blue;
+        font-size:40px;
+        font-weight:bold;
+        margin-top:auto;
+        margin-bottom:auto;
+    }
+    #main-temples{
+        display:grid;
+        grid-row-start:3;
+        grid-row-end:6;
+    }
+    #main-temples figure figcaption{
+        font-size:30px;
+        text-align:center;
+        color:blue;
+        font-weight:bold;
+    }
+    #main-temples #main-temples-1{
+        display:flex;
+        justify-content:space-between;
+    }
+    #main-temples #main-temples-2{
+        display:flex;
+        justify-content:space-between;
+    }
+    #main-temples #main-temples-3{
+        display:flex;
+        justify-content:space-between;
+    }
+}
