@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Sour+Gummy:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>WDD 131 - Dynamic Web Fundamentals - Lazy Loading - David Antonio Fajardo</title>
+    <meta name="description" content="WDD 131: Dynamic Web Fundamentals-David Antonio Fajardo, course assignment portal">
+    <meta name="author" content="David Antonio Fajardo">
+    <link rel="stylesheet" href="styles/lazyload.css">
+</head>
+</html>
+<body>
+    <header>
+        <h1>
+            WDD 131 - Dynamic Web Fundamentals - Lazy Loading - David Antonio Fajardo  
+        </h1>
+    </header>
+    <main>
+        <picture>
+            <img src="https://tinyurl.com/3x3nk6y7" alt="Premortal Life" loading="lazy"> 
+        </picture>
+        <picture>
+            <img src="https://tinyurl.com/yc8fpju7" alt="The War in Heaven" loading="lazy">
+        </picture>
+        <picture>
+            <img src="https://tinyurl.com/ymhz6f8n" alt="The Creation" loading="lazy">
+        </picture>
+        <picture>
+            <img src="https://tinyurl.com/4nzn75uc" alt="The Fall of Adam and Eve" loading="lazy">
+        </picture>
+        <picture>
+            <img src="https://tinyurl.com/mryr78eu" alt="The atonement of Jesus Christ" loading="lazy">
+        </picture>
+        <picture>
+            <img src="https://tinyurl.com/5athaeja" alt="The Resurrection of Jesus Christ" loading="lazy">
+        </picture>
+    </main>
+    <footer>
+        <p>
+            © <span id="year"></span> | David Antonio Fajardo | Honduras
+        </p>
+        <p>
+            Last Modified: <span id="lastModified"></span>
+        </p>
+    </footer>
+    <script src="scripts/getdates.js" defer></script>
+</body>
