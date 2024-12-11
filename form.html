@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en-US">
+    <head>
+        <meta charset="UTF-8">
+        <meta name = "description" content = "WDD 230 - Web Frontend Development, W05 Assignment: Product Review Form">
+        <meta name = "author" content = "David Antonio Fajardo Ponce">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta property="og:title" content="David Antonio Fajardo Ponce - WDD 230 - Web Frontend Development">
+        <meta property="og:type" content="website">
+        <meta property="fb:app_id" content="123456789">
+        <meta property="og:description" content="WDD 230 - Web Frontend Development, David Antonio Fajardo Ponce,
+                            Product Review Form">
+        <title>"WDD 230 - Web Frontend Development W05 Assignment: Product Review Form"</title>
+        <link rel="stylesheet" href="styles/normalize.css">
+        <link rel="stylesheet" href="styles/form-larger-view.css">
+        <link rel="stylesheet" href="styles/form-mobile-view.css">
+        <script src="scripts/toggle.js"></script>
+    </head>
+    <body>
+        <header>
+            <div class="heading">
+                <h1>
+                    Product Review
+                </h1>
+            </div>
+        </header>
+        <main>
+            <form method="get" action="review.html">
+                <fieldset>
+                    <legend>
+                        Product Name
+                    </legend>
+                    <div class="dropdown">
+                        <select id="product" title="Choose a Product">
+                            <option value="choose_a_product" disabled>Choose a Product</option>
+                        </select>
+                    </div>
+                </fieldset>
+                <fieldset>
+                    <legend>
+                        Overall Rating
+                    </legend>
+                    <div class="rating">
+                        <label for="star1" title="Sucks big time">⭐<br  />
+                        <input type="radio" id="star1" name="rating" value="1" /></label>
+                        <label for="star2" title="Kinda bad">⭐⭐<br />
+                        <input type="radio" id="star2" name="rating" value="2" /></label>
+                        <label for="star3" title="Meh">⭐⭐⭐<br />
+                        <input type="radio" id="star3" name="rating" value="3" /></label>
+                        <label for="star4" title="Pretty good">⭐⭐⭐⭐<br />
+                        <input type="radio" id="star4" name="rating" value="4" /></label>
+                        <label for="star5" title="Rocks!">⭐⭐⭐⭐⭐<br />
+                        <input type="radio" id="star5" name="rating" value="5" /></label>
+                    </div>
+                </fieldset>
+                <fieldset>
+                    <legend>
+                        Date of Installation
+                    </legend>
+                    <input type="date" id="date" name="date" title="Enter the date of installation" required />
+                </fieldset>
+                <fieldset>
+                    <div class="features">
+                        <legend>
+                            Which features did you find useful in the product?<br />
+                            (Check all that apply)
+                        </legend>
+                        <div class="checkbox">
+                            <input type="checkbox" id="feature1" name="feature1" value="feature1" />
+                            <label for="feature1">Durability</label><br />
+                            <input type="checkbox" id="feature2" name="feature2" value="feature2" />
+                            <label for="feature2">Ease of Use</label><br />
+                            <input type="checkbox" id="Performance" name="feature3" value="feature3" title="Performance" />
+                            <label for="feature3">Performance</label><br />
+                            <input type="checkbox" id="feature4" name="feature4" value="feature4" />
+                            <label for="feature4">Design</label>
+                        </div>
+                    </div>
+                </fieldset>
+                <fieldset>
+                    <div class="review">
+                        <legend>
+                            Written Review <span class="optional">(Optional)</span>
+                        </legend>
+                        <textarea id="comments" name="comments" title="Enter your comments here" required>
+                        </textarea>
+                    </div>
+                </fieldset>
+                <fieldset>
+                    <div class="your-name">
+                        <legend>
+                            Your Name <span class="optional">(Optional)</span>
+                        </legend>
+                        <input type="text" id="name" name="name" title="Enter your name here" required>
+                    </div>
+                </fieldset>
+                <div class="submit">
+                    <input type="submit" id="post-review" value="Post Review" title="Submit your review" placeholder="Submit">
+                </div>
+            </form>
+        </main>
+    <footer>
+        <div id="flag-container">
+            <div id="text">
+                <p>
+                    &copy;<span id="currentyear"></span> | David Antonio Fajardo Ponce | Honduras
+                </p>
+            </div>
+            <div id="flag">
+                <img src = "images/Honduras_flag.png" alt = "Honduras Flag">
+            </div>
+        </div>
+        <div id="last_modified">
+            <p>
+            Last Modified: <span  id="lastModified"></span>
+            </p>
+        </div>
+    </footer>
+    <script src="scripts/getdates.js"></script>
+    <script src="scripts/form.js"></script>
+</body>
+</html>
