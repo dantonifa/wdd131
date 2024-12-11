@@ -1,0 +1,105 @@
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: pink;
+}
+body .heading {
+    display:grid;
+    grid-template-rows:1fr 1fr;
+    align-items: center;
+    height: 200px;
+    width: 100%;
+    margin-top:20px;
+    margin-bottom: 0;
+    padding-top: 10px;
+    padding-bottom: 0;
+    background-color: violet;
+    color:black;
+    font-size:20px;
+}
+h1 {
+    display:grid;
+    grid-row-start:1;
+    grid-row-end:2;
+    height:auto;
+    margin-top:auto;
+    margin-bottom:auto;
+    text-align:center;
+}
+p{
+    display:grid;
+    grid-row-start:2;
+    grid-row-end:3;
+    height:auto;
+    margin-top:auto;
+    margin-bottom:auto;
+    text-align:center;
+    font-size:25px;
+}
+p a{
+    color:black;
+    font-weight:bold;
+}
+footer {
+    display: grid;
+    grid-template-rows:1fr 1fr;
+    grid-template-columns:1fr;
+    width: 100%;
+    height: auto;
+    background-color: purple;
+    color: white;
+    font-size: 20px;
+    padding-bottom:15px;
+    margin-bottom:15px;
+}
+footer #flag-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: auto;
+    padding-top:15px;
+}
+footer #flag-container #text {
+    display: inline-block;
+    justify-content: center;
+    align-items: center;
+    width: 600px;
+    height: auto;
+    padding-top:15px;
+}
+footer #flag-container #text p {
+    display: inline-block;
+    margin-top: auto;
+    margin-bottom: auto;
+    padding-left:15px;
+    font-weight: bold;
+    align-items: left;
+    margin-left:auto;
+}   
+footer #flag-container img {
+    display: inline-block;
+    text-align: center;
+    resize: both;
+    width: 150px;
+    height: auto;
+    margin-left: 6px;
+}
+footer #last_modified {
+    display: grid;
+    grid-column-start: 1;
+    grid-column-end: 3;
+    grid-row-start: 2;
+    grid-row-end: 3;
+    margin-top: auto;
+    margin-bottom: auto;
+    padding-left:15px;
+}
+footer #last_modified p {
+    display:block;
+    margin-top: auto;
+    margin-bottom: auto;
+    padding-left:15px;
+    font-weight: bold;
+}
