@@ -85,7 +85,7 @@
     main .hero-image .weather p{
         position:relative;
         text-align:left;
-        margin-left:25px;
+        margin-left:70px;
         font-size:2.0em;
         color:blue;
         font-weight:bold;
@@ -137,3 +137,4 @@
 
 
 }
+
