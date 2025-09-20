@@ -82,6 +82,14 @@
         font-weight:bold;
         color:blue;
     }
+    main .hero-image .weather h2::after{
+        content: " ⛅";
+        display:block;
+        margin-left:auto;
+        margin-right:auto;
+        width:150px;
+        height:auto;
+    }
     main .hero-image .weather p{
         position:relative;
         text-align:left;
@@ -137,4 +145,5 @@
 
 
 }
+
 
