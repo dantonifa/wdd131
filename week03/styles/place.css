@@ -1,4 +1,14 @@
 @media screen and (max-width: 720px) {
+    :root {
+        --main-bg-color: aquamarine;
+        --header-bg-color: rgba(92, 238, 43, 0.702);
+        --section-bg-color: yellow;
+        --footer-bg-color: azure;
+        --text-color: blue;
+    }
+    ::after {
+        box-sizing: border-box;
+    }
     main .hero-image .data{
         display:flex;
         flex-direction:column;
@@ -56,4 +66,5 @@
         text-align:left;
         margin-left:25px;
     }
+
 }
