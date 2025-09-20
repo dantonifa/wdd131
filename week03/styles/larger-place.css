@@ -1,0 +1,137 @@
+@media screen and (min-width: 721px) {
+    body {
+        display:grid;
+        width:100%;
+        height:auto;
+        background-color:aquamarine;
+    }
+    header .heading-container{ 
+        display:grid;
+        width:100%;
+        height: 150px;
+        margin:0;
+        padding:0;
+        background-color:rgba(92, 238, 43, 0.702);
+    }
+    header .heading-container h1{
+        display:flex;
+        justify-content:center;
+        align-items:center;
+        font-size:2.5em;
+        color:blue;
+        font-weight:bold;
+    }
+    main{
+        justify-content:center;
+        
+    }
+    main .hero-image img{
+        display:flex;
+        position:absolute;
+        margin-top:-50px;
+        z-index:0;
+        width:100%;
+        height:auto;
+        margin-left:auto;
+        margin-right:auto;
+        
+    }
+    
+    main .hero-image .data{
+        display:flex;
+        flex-direction:column;
+        position:relative;
+        z-index:1;
+        height:800px;
+        width:550px;
+        margin-top:50px;
+        margin-left:400px;
+        background-color:yellow;
+    }
+    main .hero-image .data h2{
+        text-align:center;
+        font-size:2.5em;
+        font-weight:bold;
+        color:blue;
+    }
+    main .hero-image .data #data-content {
+        display:flex;
+        flex-direction:column;
+        position:relative;
+        text-align:left;
+        margin-left:25px;
+        font-size:2.0em;
+        color:blue;
+        font-weight:bold;
+    }
+    main .hero-image .weather{
+        display:flex;
+        flex-direction:column;
+        position:relative;
+        z-index:1;
+        height:600px;
+        width:500px;
+        margin-top:-450px;
+        margin-left:1800px;
+        background-color:yellow;
+    }
+    main .hero-image .weather h2{
+        margin-left:auto;
+        margin-right:auto;
+        font-size:2.5em;
+        font-weight:bold;
+        color:blue;
+    }
+    main .hero-image .weather p{
+        position:relative;
+        text-align:left;
+        margin-left:25px;
+        font-size:2.0em;
+        color:blue;
+        font-weight:bold;
+    }
+    footer{
+        display: grid;
+        grid-row: 5/7;
+        width: 90%;
+        height:auto;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr;
+        padding: 15px;
+        bottom: 0;
+        margin-top:80px;
+        background-color:azure;
+        font-size: 30px;
+    }
+    footer #flag-container {
+        display:flex;
+        align-items: center;
+        justify-content: center;
+    }
+    footer #text {
+        font-size: 30px;
+        margin-top:auto;
+        margin-bottom:auto;
+        float:right;
+    }
+    footer img {
+        display:flex;
+        float:right;
+        resize: both;
+        width: 150px;
+        height: auto;
+        margin-left: 6px;
+    }
+    footer #last_modified {
+        display: grid;
+        grid-column-start: 1;
+        grid-column-end: 3;
+        grid-row-start: 2;
+        grid-row-end: 3;
+        width: 100%;
+        height: auto;
+        text-align: center;
+        font-size: 30px;
+    }
+
+}
