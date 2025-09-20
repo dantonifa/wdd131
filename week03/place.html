@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Sour+Gummy:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>WDD 131 - Dynamic Web Fundamentals - David Antonio Fajardo</title>
+    <meta name="description" content="WDD 131: Dynamic Web Fundamentals-David Antonio Fajardo, course assignment portal">
+    <meta name="author" content="David Antonio Fajardo">
+    <link rel="stylesheet" href="styles/larger-place.css">
+    <link rel="stylesheet" href="styles/place.css">
+    <link rel="stylesheet" href="styles/place.css">
+    <script src="scripts/place.js" defer></script>
+    <script src="scripts/weather.js" defer></script>
+    <script src="scripts/getdates.js" defer></script>
+</head>
+</html>
+<body>
+    <header>
+        <div class="heading-container">
+            <h1>
+                San Pedro Sula
+            </h1>
+        </div>
+    </header>
+    <main>
+        <div class="hero-image">
+            <img src="images/sps_landscape.png" alt="San Pedro Sula Landscape">
+            <div class="data">
+                <h2>
+                    Data
+                </h2>
+                <div id="data-content">
+                    <p>Area:        856.3 km²</p>
+                    <p>Elevation:	83 m (272 ft)</p>
+                    <p>Climate:     Tropical savanna</p>
+                    <p>Population:  801 259 resident persons</p>
+                    <p>Languages:   Spanish, English</p>
+                    <p>Currency:    Lempira</p>
+                    <p>GDP:         $8.7 billion (2023)</p>
+                </div>
+
+            </div>
+            <div class="weather">
+                <h2>
+                    Weather ⛅
+                </h2>
+                <p>
+                    Temperature: <span id="temp"></span>°C
+                </p>
+
+            </div>
+        </div>
+    </main>
+    <footer>
+         <div id="flag-container">
+                <div id="text">
+                    <p>
+                        &copy;<span id="currentyear"></span> | David Antonio Fajardo Ponce | Honduras
+                    </p>
+                </div>
+                <div id="flag">
+                    <img src = "images/Honduras_flag.png" alt = "Honduras Flag">
+                </div>
+                <p>
+                Last Modified: <span  id="lastModified"></span>
+                </p>
+            </div>
+    </footer>
+    
+</body>
