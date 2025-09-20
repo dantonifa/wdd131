@@ -44,4 +44,3 @@ fetch(apiURL)
     const windChill = calculateWindChill(temperature, windSpeed);
     document.getElementById("windchill").innerText = windChill;
   });
-
