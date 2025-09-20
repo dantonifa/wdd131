@@ -1,0 +1,35 @@
+.hero {
+    width: 100%;
+    height: auto;
+}
+.hero img {
+    width: 100%;
+    height: auto;
+}
+.hero img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+.hero img {
+    border-radius: 8px;
+}
+
+@media (max-width: 600px) {
+    .hero img {
+        width: 100%;
+        height: auto;
+    }
+}
+@media (min-width: 601px) and (max-width: 1200px) {
+    .hero img {
+        width: 100%;
+        height: auto;
+    }
+}
+@media (min-width: 1201px) {
+    .hero img {
+        width: 100%;
+        height: auto;
+    }
+}
