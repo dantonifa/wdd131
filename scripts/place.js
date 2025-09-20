@@ -33,7 +33,8 @@ function calculateWindChill(temperature, windSpeed) {
           0.3965 * temperature * Math.pow(windSpeed, 0.16)
       ) + "°C"
     );
-  } else {
+  } 
+    else {
         return "N/A";
   }
 }
@@ -44,3 +45,4 @@ fetch(apiURL)
     const windChill = calculateWindChill(temperature, windSpeed);
     document.getElementById("windchill").innerText = windChill;
   });
+
