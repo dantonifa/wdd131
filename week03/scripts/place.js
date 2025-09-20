@@ -8,3 +8,24 @@ fetch(apiURL)
     const temperature = data.main.temp;
     document.getElementById("temp").innerText = temperature;
   });
+function calculateWindChill(temperature, windSpeed) {
+  if (temperature <= 10 && windSpeed > 4.8) {
+    return (
+      Math.round(
+        13.12 +
+          0.6215 * temperature -
+          35.75 * Math.pow(windSpeed, 0.16) +
+          0.3965 * temperature * Math.pow(windSpeed, 0.16)
+      ) + "°C"
+    );
+  } else {
+       return "N/A";
+  }
+}
+fetch(apiURL)
+  .then((response) => response.json())
+  .then((data) => {
+    const windSpeed = data.wind.speed;
+    const windChill = calculateWindChill(temperature, windSpeed);
+    document.getElementById("windchill").innerText = windChill;
+  });
