@@ -54,11 +54,10 @@
 		color: black;
 		text-align: center;
 		padding: 1rem;
-		text-decoration: none;
 	}
 	
 	nav a:hover {
-		text-decoration-color: burlywood;
+		color: rgb(236, 18, 26);
 	}    
  
 }
@@ -123,10 +122,9 @@
 		font-weight: bold;
 		font-size:2.0em;
 		margin:0;
-		text-decoration: none;
 	}
 	nav a:hover {
-		text-decoration-color: burlywood;
+		color: rgb(236, 18, 26);
 	}
 	main{
 		display: grid;
@@ -189,4 +187,5 @@
 		font-weight: bold;
 	}
 }
+
 
