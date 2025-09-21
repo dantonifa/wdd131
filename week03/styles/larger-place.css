@@ -42,7 +42,7 @@
         flex-direction:column;
         position:relative;
         z-index:1;
-        height:800px;
+        height:1000px;
         width:550px;
         margin-top:50px;
         margin-left:400px;
@@ -145,5 +145,6 @@
 
 
 }
+
 
 
