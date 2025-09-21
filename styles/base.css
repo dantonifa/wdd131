@@ -8,7 +8,9 @@
 	}
 	body {
 		font-family: "Lato", sans-serif;
-		background-color:aliceblue
+		background-color:aliceblue;
+		display: flex;
+		flex-direction: column;
 	}
 	header {
 		background-color: rgba(73, 240, 240, 0.716);
@@ -22,8 +24,18 @@
 	main {
 		margin: 0 auto;
 	}
-	h1 {
-		font-size: 2rem;
+	header h1 {
+		display:block;
+		text-align: center;
+		font-size: 1.5rem;
+	}
+	header h1 #course-title {
+		margin-top: 10px;
+		margin-bottom: 10px;
+	}
+	header h1 #student-name {
+		margin-top: 10px;
+		margin-bottom: 10px;
 	}
 	h2 {
 		font-size: 2.5rem;
@@ -46,37 +58,46 @@
 	}
 	
 	nav a:hover {
-		text-decoration:overline;
+		text-decoration-color: burlywood;
 	}    
  
 }
    
 /* Larger Views ******************************/
-@media (min-width: 640px) {
+@media only screen and (min-width: 601px) {
 	* {
 		margin: 0;
 		padding: 0;
 	}
 	body {
-		font-family: "Lato", sans-serif;
 		display: grid;
-		background-color:aliceblue;
-		grid-template-rows:1fr 3fr 1fr;
+		grid-template-columns: 1fr;
+		grid-template-rows: 200px 3fr 1fr;
+		font-family: "Lato", sans-serif;
+		background-color: aliceblue;
+		width: 100%;
 	}
 	header {
-		background-color: rgba(73, 240, 240, 0.716);
 		display: grid;
-		grid-template-rows: 1fr 1fr;
-		align-items: center;
-		justify-content: center;
-		padding: 20px;
+		grid-template-rows: 100px 100px;
 		border: 1px solid white;
+		background-color: rgba(73, 240, 240, 0.716);
 	}
-	h1 {
-		display: grid;
+	header	h1 {
+		display: inline-block;
 		grid-row-start:1;
 		grid-row-end:2;
-		font-size: 2rem;
+		text-align: center;
+		margin-top: auto;
+		margin-bottom: auto;
+		font-size: 2.5rem;
+		font-weight: bold;
+	}
+	h1 #course-title {
+		margin-right: 25px;
+	}
+	h1 #student-name {
+		margin-left: 25px;
 	}
 	nav {
 		display:grid;
@@ -86,7 +107,7 @@
 		background-color: yellow;
 		margin: 0 auto;
 	}
-
+	
 	nav ul {
 		list-style-type: none;
 		display:flex;
@@ -94,8 +115,6 @@
 		padding: 0;
 		margin: 0;
 	}
-	
-
 	nav ul li a {
 		display:grid;
 		color: black;
@@ -106,9 +125,8 @@
 		margin:0;
 		text-decoration: none;
 	}
-	
 	nav a:hover {
-		text-decoration:overline;
+		text-decoration-color: burlywood;
 	}
 	main{
 		display: grid;
@@ -151,10 +169,10 @@
 		line-height: 80px;
 	}
 	.card ul li a:hover{
-		text-decoration:overline;
+		text-decoration-color: burlywood;
 	}
 	.card ul li a:active{
-		text-decoration:underline;
+		text-decoration-color: burlywood;
 	}
 	footer {
 		background-color: rgba(73, 240, 240, 0.716);
@@ -171,3 +189,4 @@
 		font-weight: bold;
 	}
 }
+
