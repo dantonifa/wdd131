@@ -1,15 +1,28 @@
 @media screen and (min-width: 721px) {
+    :root {
+        --main-bg-color: aquamarine;
+        --header-bg-color: rgba(92, 238, 43, 0.702);
+        --section-bg-color: yellow;
+        --footer-bg-color: azure;
+        --text-color: blue;
+    }
     body {
-        display:grid;
+       display:grid;
+        grid-template-rows: 1fr auto auto;
+        grid-template-columns: 1fr;
         width:100%;
         height:auto;
         background-color:aquamarine;
     }
+    ::after {
+        box-sizing: border-box;
+    }
     header .heading-container{ 
         display:grid;
-        width:100%;
-        height: 150px;
-        margin:0;
+        width:90%;
+        height: 80px;
+        margin-left:auto;
+        margin-right:auto;
         padding:0;
         background-color:rgba(92, 238, 43, 0.702);
     }
@@ -17,35 +30,46 @@
         display:flex;
         justify-content:center;
         align-items:center;
+        margin-top:auto;
+        margin-bottom:auto;
         font-size:4.5em;
         color:blue;
         font-weight:bold;
     }
     main{
-        justify-content:center;
-        
+        display:grid;
+        grid-row-start:2;
+        grid-row-end:3;
+        grid-column-start:1;   
+        grid-column-end:2;
+        width:90%;
+        height:auto;
+        margin-left:auto;
+        margin-right:auto;
     }
     main .hero-image img{
-        display:flex;
-        position:absolute;
-        margin-top:-50px;
-        z-index:0;
+        display:grid;
+        grid-row-start: 2;
+        grid-row-end: 3;
+        grid-column-start: 1;
+        grid-column-end: 2;
+        object-position: center;
+        object-fit:contain;
         width:100%;
         height:auto;
         margin-left:auto;
         margin-right:auto;
-        
     }
-    
     main .hero-image .data{
         display:flex;
         flex-direction:column;
         position:relative;
         z-index:1;
-        height:1000px;
+        height:800px;
         width:550px;
-        margin-top:50px;
-        margin-left:400px;
+        margin-top:-930px;
+        margin-left:100px;
+        line-height: 1em;
         background-color:yellow;
     }
     main .hero-image .data h2{
@@ -69,10 +93,10 @@
         flex-direction:column;
         position:relative;
         z-index:1;
-        height:600px;
+        height:500px;
         width:500px;
-        margin-top:-450px;
-        margin-left:1800px;
+        margin-top:-500px;
+        margin-left:1700px;
         background-color:yellow;
     }
     main .hero-image .weather h2{
@@ -99,19 +123,24 @@
         font-weight:bold;
     }
     footer{
-        display: grid;
-        grid-row: 5/7;
-        width: 90%;
+        display:flex;
+        flex-direction:column;
+        grid-row-start:3;
+        grid-row-end:4;
+        grid-column-start:1;
+        grid-column-end:2;
+        width:90%;
+        margin-top: 130px;
         height:auto;
-        grid-template-columns: 1fr;
-        grid-template-rows: 1fr 1fr;
-        padding: 15px;
-        bottom: 0;
-        margin-top:80px;
+        margin-right:auto;
+        margin-left:auto;
         background-color:azure;
         font-size: 30px;
+        font-weight: bold;
     }
     footer #flag-container {
+        margin-top:auto;
+        margin-bottom:auto;
         display:flex;
         align-items: center;
         justify-content: center;
@@ -128,6 +157,8 @@
         resize: both;
         width: 150px;
         height: auto;
+        margin-top:auto;
+        margin-bottom:auto;
         margin-left: 14px;
         margin-right: 14px;
     }
@@ -142,10 +173,4 @@
         text-align: center;
         font-size: 30px;
     }
-
-
 }
-
-
-
-
