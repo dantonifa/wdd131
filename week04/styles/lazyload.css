@@ -25,7 +25,7 @@ header{
 header h1{
     display:grid;
     font-size:50px;
-    color:white;
+    color:rgb(8, 0, 0);
     text-align:center;
     margin-left:auto;
     margin-right:auto;
@@ -34,11 +34,11 @@ main {
     display:grid;
     grid-row-start:2;
     grid-row-end:3;
-    margin-top:20px;
+    margin-top:100px;
     padding-top:20px;
     text-align:center;
 }
-main picture img{
+main picture img[loading="lazy"]{
     display:grid;
     width:400px;
     height:600px;
@@ -47,13 +47,28 @@ main picture img{
     padding-top:20px;
     margin-left:auto;
     margin-right:auto;
+    margin-bottom:60px;
     background:rgba(238, 205, 43, 0.906);
-    animation:10s;
+    animation-fill-mode:forwards;
+    border-radius:15px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    opacity:0;
+    /*Add a fade from black animation to each image using CSS animation and opacity.*/
+    background:rgba(0, 0, 0, 0.5);
+    animation: fadeIn 10s ease-in;
+    animation-delay:0.2s;
+    animation-fill-mode:forwards;
+    border:40px solid rgba(238, 205, 43, 0.906);
 }
-@keyframes fade{
+/*Correctly apply native lazy loading to the images so that they only load when the user scrolls down the page.*/
+@keyframes fadeIn{
     0%{
-        opacity:0;}
+        opacity:0;
     }
+    100%{
+        opacity:1;
+    }
+}
 
 footer{
     display:grid;
@@ -65,8 +80,8 @@ footer{
     grid-row-end:4;
     background-color:rgba(238, 205, 43, 0.906);
     font-size:1.5em;
-    color:rgb(89, 56, 10);
-    font-weight:bold;
+    color:rgb(12, 7, 0);
+    font-weight:bolder;
     text-align:center;
     margin-top:20px;
     padding-top:20px;
