@@ -1,16 +1,29 @@
 @media screen and (min-width: 721px) {
-    :root {
+     :root {
         margin: 0;
         padding: 0;
         --text-color: blue;
         --body-fonts: "Helvetica", "Arial", sans-serif;
         --line-height: 1.5;
     }
-
+    /* :root pseudo-class used with at least two global variables defined. */
+    
+    *, *::before, *::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+    h1, h2, p, svg {
+        line-height: var(--line-height);
+        margin: 0;
+        padding: 0;
+    }
+    h1, h2 {
+        font-family: var(--body-fonts);
+    }
     svg {
         font-family: var(--body-fonts);
     }
-    
     body {
         display:grid;
         grid-template-rows: 1fr auto auto;
@@ -180,5 +193,6 @@
         font-size: 30px;
     }
 }
+
 
 
