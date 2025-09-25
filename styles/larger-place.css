@@ -1,28 +1,31 @@
 @media screen and (min-width: 721px) {
-     :root {
+         :root {
         margin: 0;
         padding: 0;
         --text-color: blue;
         --body-fonts: "Helvetica", "Arial", sans-serif;
-        --line-height: 1.5;
+        --line-height: 1;
     }
     /* :root pseudo-class used with at least two global variables defined. */
     
-    *, *::before, *::after {
-        box-sizing: border-box;
-        margin: 0;
-        padding: 0;
-    }
-    h1, h2, p, svg {
+    h1, h2, svg {
         line-height: var(--line-height);
-        margin: 0;
-        padding: 0;
     }
     h1, h2 {
         font-family: var(--body-fonts);
     }
     svg {
         font-family: var(--body-fonts);
+    }
+    p {
+        font-family: var(--body-fonts);
+        font-size: 1em;
+        color: var(--text-color);
+        text-align: justify;
+    }
+    html, body {
+        margin: 0;
+        padding: 0;
     }
     body {
         display:grid;
@@ -193,6 +196,7 @@
         font-size: 30px;
     }
 }
+
 
 
 
