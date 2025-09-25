@@ -27,7 +27,11 @@
     </header>
     <main>
         <div class="hero-image">
-            <img srcset src="images/sps_landscape.webp" alt="San Pedro Sula cityscape">
+            <picture>
+                <source media="(max-width: 720px)" srcset="images/sps_portrait.webp">
+                <source media="(min-width: 721px)" srcset="images/sps_landscape.webp">
+                <img src="images/sps_landscape.webp" alt="Skyline of San Pedro Sula, Honduras">
+            </picture>
             <div class="data">
                 <h2>
                     Data
@@ -70,7 +74,8 @@
                     </p>
                 </div>
                 <div id="flag">
-                    <img srcset src="images/Honduras_flag.webp" alt = "Honduras Flag">
+                    <source media="(min-width: 721px)" srcset="images/Honduras_flag.webp">
+                    <img src="images/Honduras_flag.webp" alt="Flag of Honduras">
                 </div>
                 <p>
                 Last Modified: <span  id="lastModified"></span>
@@ -79,6 +84,7 @@
     </footer>
 </body>
 </html>
+
 
 
 
