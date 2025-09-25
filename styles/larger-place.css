@@ -90,7 +90,7 @@
         width:550px;
         margin-top:-930px;
         margin-left:100px;
-        line-height: 1em;
+        line-height: 0.5em;
         background-color:yellow;
     }
     main .hero-image .data h2{
@@ -196,6 +196,7 @@
         font-size: 30px;
     }
 }
+
 
 
 
