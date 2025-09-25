@@ -1,11 +1,16 @@
 @media screen and (min-width: 721px) {
     :root {
-        --main-bg-color: aquamarine;
-        --header-bg-color: rgba(92, 238, 43, 0.702);
-        --section-bg-color: yellow;
-        --footer-bg-color: azure;
+        margin: 0;
+        padding: 0;
         --text-color: blue;
+        --body-fonts: "Helvetica", "Arial", sans-serif;
+        --line-height: 1.5;
     }
+
+    svg {
+        font-family: var(--body-fonts);
+    }
+    
     body {
         display:grid;
         grid-template-rows: 1fr auto auto;
@@ -33,7 +38,7 @@
         margin-top:auto;
         margin-bottom:auto;
         font-size:4.5em;
-        color:blue;
+        color:var(--text-color);
         font-weight:bold;
     }
     main{
@@ -175,4 +180,5 @@
         font-size: 30px;
     }
 }
+
 
