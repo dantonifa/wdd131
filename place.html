@@ -13,7 +13,6 @@
     <meta name="author" content="David Antonio Fajardo">
     <link rel="stylesheet" href="styles/larger-place.css">
     <link rel="stylesheet" href="styles/place.css">
-    <link rel="stylesheet" href="styles/place.css">
     <script src="scripts/place.js" defer></script>
     <script src="scripts/getdates.js" defer></script>
 </head>
@@ -38,7 +37,7 @@
                 <div id="data-content">
                     <p>Area:        112 777 km²</p>
                     <p>Population:  11 005 850</p>
-                    <p>Capital:	    Tegucigalpa</p>
+                    <p>Capital:     Tegucigalpa</p>
                     <p>Languages:   Spanish, English</p>
                     <p>Currency:    Lempira</p>
                     <p>Time Zone:   Central America</p>
@@ -55,7 +54,10 @@
                 <p>
                     Temperature: <span id="temp"></span>°C
                 </p>
-                <!--conditions-->
+                <!--weather icon-->
+                <div class="icon-container">
+                    <img id="icon" src="images/weather-icon.svg" alt="Weather Icon">
+                </div>
                 <p>
                     Conditions: <span id="condition"></span>
                 </p>
@@ -83,6 +85,7 @@
     </footer>
 </body>
 </html>
+
 
 
 
