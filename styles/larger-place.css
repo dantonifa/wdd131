@@ -1,5 +1,5 @@
 @media screen and (min-width: 721px) {
-         :root {
+    :root {
         margin: 0;
         padding: 0;
         --text-color: blue;
@@ -90,7 +90,7 @@
         width:550px;
         margin-top:-930px;
         margin-left:100px;
-        line-height: 1.5em;
+        line-height: 0.5em;
         background-color:yellow;
     }
     main .hero-image .data h2{
@@ -103,7 +103,6 @@
         display:flex;
         flex-direction:column;
         position:relative;
-        text-align:left;
         margin-left:25px;
         font-size:2.0em;
         color:blue;
@@ -126,6 +125,10 @@
         font-size:2.5em;
         font-weight:bold;
         color:blue;
+    }
+    
+    main .hero-image .weather #icon{
+        display:none;
     }
     /*Display a pseudo element weather icon after the heading "Weather".*/
     main .hero-image .weather h2::after{
@@ -196,6 +199,7 @@
         font-size: 30px;
     }
 }
+
 
 
 
