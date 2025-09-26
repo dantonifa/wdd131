@@ -1,4 +1,8 @@
 @media screen and (max-width: 720px) {
+    header .heading-container h1{
+        text-align:center;
+        font-size:3.0em;
+    } 
     main .hero-image .data{
         display:flex;
         flex-direction:column;
@@ -6,7 +10,7 @@
         background-color:yellow;
     }
     main .hero-image .data h2{
-        text-align:left;
+        text-align:center;
         font-size:2.0em;
         font-weight:bold;
         color:blue;
@@ -28,7 +32,7 @@
         background-color:yellow;
     }
     main .hero-image .weather h2{
-        margin-left:25px;
+        text-align:center;
         font-size:2.0em;
         font-weight:bold;
         color:blue;
@@ -41,13 +45,25 @@
         color:blue;
         font-weight:bold;
     }
+    main .hero-image .weather .icon-container{
+        display:inline-block;
+        width:100px;
+        height:100px;
+        margin-left:100px;
+        margin-right:auto;
+    }
+    main .hero-image .weather .icon-container img{
+        width:100%;
+        height:auto;
+    }
+    
     footer{
-        display:flex;
-        flex-direction:column;
+        display:inline-block;
+        text-align:center;
         position:relative;
         height:100px;
         background-color:azure;
-        font-size:1.0em;
+        font-size:1.5em;
         color:blue;
         font-weight:bold;
     }
@@ -56,5 +72,12 @@
         text-align:left;
         margin-left:25px;
     }
+    footer #flags{
+        display:flex;
+        flex-direction:row;
+        position:relative;
+        text-align:center;
+    }
 }
+
 
