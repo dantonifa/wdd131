@@ -4,15 +4,17 @@
     <meta charset="UTF-8">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Sour+Gummy:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Sour+Gummy:ital,wght@0,100..900;1,100..900&display=swap">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>W04 Assignment: Picture Album Enhancement</title>
-    <meta name="description" content="WDD 131: Dynamic Web Fundamentals-W04 Assignment: Picture Album Enhancement">
+    <meta name="description" content="A webpage about Temples Responsive Design">
     <meta name="author" content="David Antonio Fajardo">
     <link rel="stylesheet" href="styles/filtered-temples.css">
     <link rel="stylesheet" href="styles/filtered-temples-large.css">
+    <script src="scripts/filtered-temples.js" defer></script>
+    <script src="scripts/getdates.js" defer></script> 
 </head>
 <body>
     <header>
@@ -24,7 +26,7 @@
         <button type="button" id="menu-button" title="Menu"></button>
         <nav>
             <div class="menu">
-                <a href="#" class="home">Home</a>
+                <a href="#" id="home">Home</a>
                 <a href="#" id="old">Old</a>
                 <a href="#" id="new">New</a>
                 <a href="#" id="large">Large</a>
@@ -44,7 +46,7 @@
             <div id="main-temples-3"></div>
             <div id="main-temples-4"></div>
         </div>
-        <div id="#main-temples-old"></div>
+        <div id="main-temples-5"></div>
     </main>
     <footer>
         <p>
@@ -56,7 +58,5 @@
             Last Modified: <span id="lastModified"></span> 
         </p>
     </footer>
-    <script src="scripts/filtered-temples.js" defer></script>
-    <script src="scripts/getdates.js" defer></script> 
 </body>
 </html>
