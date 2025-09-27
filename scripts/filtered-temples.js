@@ -81,8 +81,33 @@ const temples = [
       "https://churchofjesuschristtemples.org/assets/img/temples/tegucigalpa-honduras-temple/tegucigalpa-honduras-temple-3878.jpg",
   },
 ];
-/* Make a loop to call the function createTempleCard() for the three first temples in the array, 
-and send them to the div id="main-temples-1"*/
+/*Make a function that clears the existing content of the divs with the ids top:
+ prevent repetition*/
+
+function clearTempleCards() {
+  document.getElementById("main-temples-1").innerHTML = "";
+  document.getElementById("main-temples-2").innerHTML = "";
+  document.getElementById("main-temples-3").innerHTML = "";
+  document.getElementById("main-temples-4").innerHTML = "";
+}
+
+/*Respond to the main navigation home item by displaying all the temples again*/
+document.getElementById("home").addEventListener("click", function () {
+  // Clear existing content
+  clearTempleCards();
+  document.getElementById("main-temples-3").innerHTML = "";
+  document.getElementById("main-temples-4").innerHTML = "";
+  // Change the heading h2
+  document.querySelector("h2").textContent = "All Temples";
+  /* Call the functions CreateTempleCard1, CreateTempleCard2, CreateTempleCard3,
+  and CreateTempleCard4 and display the temple cards */
+  createTempleCard1();
+  createTempleCard2();
+  createTempleCard3();
+  createTempleCard4();
+});
+/* Create temple cards for the elements of the array with
+the indexes 0, 1, and 2, and send them to the div id=main-temples-1 */
 createTempleCard1();
 function createTempleCard1() {
   for (let i = 0; i < 3; i++) {
@@ -169,9 +194,10 @@ function createTempleCard3() {
     document.querySelector("#main-temples-3").appendChild(card);
   }
 }
-//Create a temple card for the last temple in the array and send it to the div id=main-temples-4.
-createTemplecard4();
-function createTemplecard4() {
+//Create a temple card for the index 9 in the array and send it to the div id=main-temples-4.
+createTempleCard4();
+function createTempleCard4() {
+  for (let i = 9; i < 10; i++);
   let card = document.createElement("section");
   let name = document.createElement("h3");
   let location = document.createElement("p");
@@ -204,3 +230,175 @@ hamButton.addEventListener("click", () => {
   navigation.classList.toggle("open");
   hamButton.classList.toggle("open");
 });
+// Close the menu when a link is clicked
+document.querySelectorAll(".menu a").forEach((link) =>
+  link.addEventListener("click", () => {
+    navigation.classList.remove("open");
+    hamButton.classList.remove("open");
+  })
+);
+/*Respond to the main navigation menu items by filtering and displaying the temples as follows:
+Old – temples built before 1900
+New – temples built after 2000
+Large – temples larger than 90,000 square feet
+Small – temples smaller than 10,000 square feet
+Home – displays all the temples stored in the array.*/
+/*If the user clicks on the Old menu item, go to the function that will 
+display only the temples built before 1900.*/
+document.getElementById("old").addEventListener("click", function () {
+  // Clear existing content
+  clearTempleCards();
+  // Change the heading h2
+  document.querySelector("h2").textContent = "Old Temples";
+  /* Call the function createOldTempleCard and display the temple cards */
+  createOldTempleCard();
+});
+function createOldTempleCard() {
+  // Loop through the temples array and filter temples built before 1900
+  temples.forEach((temple) => {
+    const dedicationYear = parseInt(temple.dedicated.split(",")[0]);
+    if (dedicationYear < 1900) {
+      let card = document.createElement("section");
+      let name = document.createElement("h3");
+      let location = document.createElement("p");
+      let dedication = document.createElement("p");
+      let area = document.createElement("p");
+      let img = document.createElement("img");
+      name.textContent = temple.templeName;
+      location.innerHTML = `<span class="label">Location:</span> ${temple.location}`;
+      dedication.innerHTML = `<span class="label">Dedicated:</span> ${temple.dedicated}`;
+      area.innerHTML = `<span class="label">Area:</span> ${temple.area} sq ft`;
+      img.setAttribute("src", temple.imageUrl);
+      img.setAttribute("alt", `${temple.templeName} Temple`);
+      img.setAttribute("loading", "lazy");
+
+      card.appendChild(name);
+      card.appendChild(location);
+      card.appendChild(dedication);
+      card.appendChild(area);
+      card.appendChild(img);
+
+      document.querySelector("#main-temples-1").appendChild(card);
+    }
+  });
+}
+/*If the user clicks on the New menu item, go to the function that will
+display only the temples built after 2000.*/
+document.getElementById("new").addEventListener("click", function () {
+  // Clear existing content
+  clearTempleCards();
+  // Change the heading h2
+  document.querySelector("h2").textContent = "New Temples";
+  /* Call the function createNewTempleCard and display the temple cards */
+  createNewTempleCard();
+});
+function createNewTempleCard() {
+  // Loop through the temples array and filter temples built after 2000
+  temples.forEach((temple) => {
+    const dedicationYear = parseInt(temple.dedicated.split(",")[0]);
+    if (dedicationYear > 2000) {
+      let card = document.createElement("section");
+      let name = document.createElement("h3");
+      let location = document.createElement("p");
+      let dedication = document.createElement("p");
+      let area = document.createElement("p");
+      let img = document.createElement("img");
+      name.textContent = temple.templeName;
+      location.innerHTML = `<span class="label">Location:</span> ${temple.location}`;
+      dedication.innerHTML = `<span class="label">Dedicated:</span> ${temple.dedicated}`;
+      area.innerHTML = `<span class="label">Area:</span> ${temple.area} sq ft`;
+      img.setAttribute("src", temple.imageUrl);
+      img.setAttribute("alt", `${temple.templeName} Temple`);
+      img.setAttribute("loading", "lazy");
+
+      card.appendChild(name);
+      card.appendChild(location);
+      card.appendChild(dedication);
+      card.appendChild(area);
+      card.appendChild(img);
+
+      document.querySelector("#main-temples-2").appendChild(card);
+    }
+  });
+}
+/*If the user clicks on the Large menu item, go to the function that will
+display only the temples larger than 90,000 square feet.*/
+document.getElementById("large").addEventListener("click", function () {
+  // Clear existing content
+  clearTempleCards();
+  document.getElementById("main-temples-1").innerHTML = "";
+  document.getElementById("main-temples-2").innerHTML = "";
+  document.getElementById("main-temples-3").innerHTML = "";
+  document.getElementById("main-temples-4").innerHTML = "";
+  createLargeTempleCard();
+  // Change the heading h2
+  document.querySelector("h2").textContent = "Large Temples";
+  /* Call the function createLargeTempleCard and display the temple cards */
+});
+function createLargeTempleCard() {
+  // Loop through the temples array and filter temples larger than 90,000 square feet
+  temples.forEach((temple) => {
+    if (temple.area > 90000) {
+      let card = document.createElement("section");
+      let name = document.createElement("h3");
+      let location = document.createElement("p");
+      let dedication = document.createElement("p");
+      let area = document.createElement("p");
+      let img = document.createElement("img");
+      name.textContent = temple.templeName;
+      location.innerHTML = `<span class="label">Location:</span> ${temple.location}`;
+      dedication.innerHTML = `<span class="label">Dedicated:</span> ${temple.dedicated}`;
+      area.innerHTML = `<span class="label">Area:</span> ${temple.area} sq ft`;
+      img.setAttribute("src", temple.imageUrl);
+      img.setAttribute("alt", `${temple.templeName} Temple`);
+      img.setAttribute("loading", "lazy");
+
+      card.appendChild(name);
+      card.appendChild(location);
+      card.appendChild(dedication);
+      card.appendChild(area);
+      card.appendChild(img);
+
+      document.querySelector("#main-temples-3").appendChild(card);
+    }
+  });
+}
+/*If the user clicks on the Small menu item, go to the function that will
+display only the temples smaller than 10,000 square feet.*/
+document.getElementById("small").addEventListener("click", function () {
+  // Clear existing content
+  clearTempleCards();
+  createSmallTempleCard();
+  // Change the heading h2
+  document.querySelector("h2").textContent = "Small Temples";
+  /* Call the function createSmallTempleCard and display the temple cards */
+});
+function createSmallTempleCard() {
+  // Loop through the temples array and filter temples smaller than 10,000 square feet
+  temples.forEach((temple) => {
+    if (temple.area < 10000) {
+      let card = document.createElement("section");
+      let name = document.createElement("h3");
+      let location = document.createElement("p");
+      let dedication = document.createElement("p");
+      let area = document.createElement("p");
+      let img = document.createElement("img");
+      name.textContent = temple.templeName;
+      location.innerHTML = `<span class="label">Location:</span> ${temple.location}`;
+      dedication.innerHTML = `<span class="label">Dedicated:</span> ${temple.dedicated}`;
+      area.innerHTML = `<span class="label">Area:</span> ${temple.area} sq ft`;
+      img.setAttribute("src", temple.imageUrl);
+      img.setAttribute("alt", `${temple.templeName} Temple`);
+      img.setAttribute("loading", "lazy");
+
+      card.appendChild(name);
+      card.appendChild(location);
+      card.appendChild(dedication);
+      card.appendChild(area);
+      card.appendChild(img);
+
+      document.querySelector("#main-temples-4").appendChild(card);
+    }
+  });
+}
+
