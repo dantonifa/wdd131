@@ -53,8 +53,9 @@
     .menu a:hover {
         background-color: rgba(255, 255, 255, 0.969);
     }
-    .menu a.home {
-        background-color:yellow;
+    /* Highlight yellow the menu home button when hovered */
+    .menu a#home:hover {
+        background-color: yellow;
     }
    
     main {
