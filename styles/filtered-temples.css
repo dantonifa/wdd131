@@ -22,7 +22,7 @@
         color:blue;
         font-size:25px;
         font-weight:bold;
-		font-family: 'Arial', sans-serif;
+		font-family: 'Lato', sans-serif;
     }
     .menu a { 
         display:none;
@@ -75,4 +75,5 @@
         font-weight:bold;
     }
 }
+
 
