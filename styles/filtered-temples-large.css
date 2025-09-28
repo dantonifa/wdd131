@@ -6,8 +6,7 @@
         align-items:center;
         text-align:center;
         background-color: #f3f3f3;
-          /*font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;*/
-        font-family: 'Arial', sans-serif;
+        font-family: 'Lato', sans-serif;
     }
     header {
         display:grid;
@@ -155,4 +154,5 @@
         font-weight:bold;
     }
 }
+
 
