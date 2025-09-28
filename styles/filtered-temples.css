@@ -22,6 +22,7 @@
         color:blue;
         font-size:25px;
         font-weight:bold;
+		font-family: 'Arial', sans-serif;
     }
     .menu a { 
         display:none;
@@ -50,6 +51,7 @@
         background-color: #f3f3f3;
         margin-top:20px;
         margin-bottom:20px;
+		font-family: 'Arial', sans-serif;
     }
     main img{
         height:250px;
@@ -73,3 +75,4 @@
         font-weight:bold;
     }
 }
+
