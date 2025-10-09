@@ -77,7 +77,7 @@
         text-decoration:none;
     }
     nav ul li a:hover{
-        color:rgb(236, 18, 26);
+        background-color: #0097a7;
     }
     main{
         display:flex;
@@ -186,6 +186,7 @@
         margin-right:10px;
     }
 }
+
 
 
 
