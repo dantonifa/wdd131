@@ -3,8 +3,8 @@
     width:60%;
     background-color: #d3f2fd;
     font-family: 'Roboto', sans-serif;
-    margin-top: auto;
-    margin-top: auto;
+    margin-top: 0px;
+    padding-top: 0px;
     margin-left:auto;
     margin-right:auto;
     }
@@ -75,6 +75,7 @@
     }
     nav ul li a:hover{
         background-color:rgb(83, 236, 18);
+    }
     main{
         display:flex;
         flex-direction: column;
@@ -221,4 +222,5 @@
         margin-left:auto;
     }
 }
+
 
