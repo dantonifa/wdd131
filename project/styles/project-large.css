@@ -76,6 +76,8 @@ nav ul li a{
     height:50px;
     text-decoration:none;
 }
+    nav ul li a:hover{
+        background-color:rgb(83, 236, 18);
 main{
     display:flex;
     flex-direction:column;
@@ -249,3 +251,4 @@ footer p{
     margin-right:10px;
 }
 }
+
