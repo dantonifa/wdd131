@@ -6,7 +6,6 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Sour+Gummy:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>WDD 131 - Dynamic Web Fundamentals - David Antonio Fajardo</title>
     <meta name="description" content="There is basic information about the student in WDD 131 - Dynamic Web Fundamentals - David Antonio Fajardo">
@@ -16,23 +15,26 @@
 </head>
 <body>
     <header>
-        <h1>
-           <span id="course-title">WDD 131 - Dynamic Web Fundamentals</span>
-           <span id="student-name">David Antonio Fajardo</span> 
+        <h1><!-- Header with Course Title and Student Name in the same row -->
+            <span id="course-title">WDD 131 - Dynamic Web Fundamentals</span>
+            <span id="student-name">David Antonio Fajardo</span>
         </h1>
         <nav>
             <ul>
                 <li><a href="https://www.linkedin.com/in/david-antonio-fajardo-ponce-778a4266/">LinkedIn</a></li>
                 <li><a href="https://byui.instructure.com/">I-Learn</a></li>
                 <li><a href="https://www.churchofjesuschrist.org/study/scriptures/bofm/mosiah/18?lang=eng#:~:text=8%20And%20it,abundantly%20upon%20you%3F">Scripture</a></li>
-                <li><a href="https://dantonifa.github.io/wdd131/project/webpage-project.html">Final Project</a></li>    
+                <li><a href="file:///c%3A/Users/David%20Antonio/Documents/BYU/wdd131/project/webpage-project.html">Final Project</a></li>    
             </ul>
         </nav>
     </header>
     <main>
         <section class="card">
             <h2>About Me</h2>
-            <p><img src="images/placeholder.png" alt="Profile Image">
+            <picture id="profile-picture">
+                <img src="images/my_picture.webp" alt="Profile Image">
+            </picture>
+            <p>
                 My name is David Antonio Fajardo Ponce. I am from Honduras. I served as full-time
                 missionary of the Church of Jesus Christ of Latter-Day Saints in Guatemala, according 
                 to the prophet Joseph Smith, part of the Land of Nephi. I am a Science teacher. I am single, 
@@ -42,13 +44,16 @@
             <h2>
                 Honduras
             </h2>
-            <p><img src="images/Honduras_flag.png " alt="Honduras Flag">
-               Honduras is a country located at the north part of Central america,
-               bordering with the Caribbean Sea. t is near United States, about 
-               5 days by ship, and 3 hours by plane. Due to the tropical climate, 
-               we grow a lot of tropical fruits, like bananas, pineapples, mangoes,
-               palms, cantaloupes, watermelons, and many others. I hope to can tropical
-               fruits to export to the US one day.
+            <picture id="honduras-flag">
+                <img src="images/Honduras_flag.webp" alt="Honduras Map">
+            </picture>
+            <p>
+                <!-- Description about Honduras, continue the sentences after the commas -->
+               Honduras is a country located at the north part of Central america,bordering with
+               the Caribbean Sea. It is near United States, about 5 days by ship, and 3 hours by plane. 
+               Due to the tropical climate, we grow a lot of tropical fruits, like bananas, pineapples,
+               mangoes, palms, cantaloupes, watermelons, and many others. I hope to can tropical fruits 
+               to export them to the US.
             </p>
         </section>
         <section class="card">
@@ -68,18 +73,16 @@
     <footer>
         <p>
             ©
-            <span id="currentyear"></span>
-            | David Antonio Fajardo | Honduras
+            <span id="currentyear"></span> | David Antonio Fajardo | Honduras
         </p>
         <p>
-            Last Modified: 
-        </p>
-        <p id="lastModified">
-            <script>document.write(document.lastModified);</script>
+            Last Modified: <span id="lastModified"><script></script> 
+            </span>
         </p>
     </footer>
 </body>
 </html>
+
 
 
 
