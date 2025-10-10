@@ -1,0 +1,1054 @@
+From: <Saved by Blink>
+Snapshot-Content-Location: https://byui-cse.github.io/wdd131-ww-course/week05/prepare-localStorage.html
+Subject: =?utf-8?Q?WDD=20131=20|=20Web=20Storage=20API=20=E2=80=93=20localStorage?=
+Date: Thu, 9 Oct 2025 10:20:03 -0600
+MIME-Version: 1.0
+Content-Type: multipart/related;
+	type="text/html";
+	boundary="----MultipartBoundary--TESNdyfvhMdUDh6USGQWoCBla3A4tOvaF0RNfcT61q----"
+
+
+------MultipartBoundary--TESNdyfvhMdUDh6USGQWoCBla3A4tOvaF0RNfcT61q----
+Content-Type: text/html
+Content-ID: <frame-AAD3C97C61401394E869337F281148DE@mhtml.blink>
+Content-Transfer-Encoding: quoted-printable
+Content-Location: https://byui-cse.github.io/wdd131-ww-course/week05/prepare-localStorage.html
+
+<!DOCTYPE html><html lang=3D"en-us"><head><meta http-equiv=3D"Content-Type"=
+ content=3D"text/html; charset=3DUTF-8">
+ =20
+  <meta name=3D"viewport" content=3D"width=3Ddevice-width, initial-scale=3D=
+1">
+  <title>WDD 131 | Web Storage API =E2=80=93 localStorage</title>
+  <link rel=3D"apple-touch-icon" sizes=3D"180x180" href=3D"https://byui-cse=
+.github.io/cse-ww-program/apple-touch-icon.png">
+  <link rel=3D"icon" type=3D"image/png" href=3D"https://byui-cse.github.io/=
+cse-ww-program/favicon-32x32.png">
+  <link rel=3D"icon" type=3D"image/png" href=3D"https://byui-cse.github.io/=
+cse-ww-program/favicon-16x16.png">
+  <link rel=3D"preconnect" href=3D"https://fonts.googleapis.com/">
+  <link rel=3D"preconnect" href=3D"https://fonts.gstatic.com/" crossorigin=
+=3D"">
+  <link href=3D"https://fonts.googleapis.com/css2?family=3DMontserrat:wght@=
+400;700&amp;display=3Dswap" rel=3D"stylesheet">
+  <link rel=3D"stylesheet" href=3D"https://byui-cse.github.io/wdd131-ww-cou=
+rse/styles/course.css">
+  <link rel=3D"stylesheet" href=3D"https://cdnjs.cloudflare.com/ajax/libs/h=
+ighlight.js/11.7.0/styles/vs2015.min.css">
+ =20
+</head>
+
+<body>
+  <header>
+    <div class=3D"page">
+      <h1>WDD 131<span id=3D"coursetitle">: Dynamic Web Fundamentals</span>=
+</h1>
+      <img src=3D"https://byui-cse.github.io/wdd131-ww-course/images/byui-l=
+ogo.svg" alt=3D"BYU-I logo" class=3D"logo">
+    </div>
+  </header>
+  <main class=3D"page">
+    <nav>
+      <span><a href=3D"https://byui-cse.github.io/wdd131-ww-course/">Home</=
+a></span>
+      <span><a href=3D"https://byui-cse.github.io/wdd131-ww-course/week01/"=
+>W1</a></span>
+      <span><a href=3D"https://byui-cse.github.io/wdd131-ww-course/week02/"=
+>W2</a></span>
+      <span><a href=3D"https://byui-cse.github.io/wdd131-ww-course/week03/"=
+>W3</a></span>
+      <span><a href=3D"https://byui-cse.github.io/wdd131-ww-course/week04/"=
+>W4</a></span>
+      <span class=3D"active"><a href=3D"https://byui-cse.github.io/wdd131-w=
+w-course/week05/">W5</a></span>
+      <span><a href=3D"https://byui-cse.github.io/wdd131-ww-course/week06/"=
+>W6</a></span>
+      <span><a href=3D"https://byui-cse.github.io/wdd131-ww-course/week07/"=
+>W7</a></span>
+    </nav>
+
+    <h2>W05 Learning Activity: JavaScript localStorage</h2>
+    <h3>Overview</h3>
+    <p>There are times when non-sensitive data storage would provide a bett=
+er user experience and offer some site
+      performance improvements. The <a href=3D"https://developer.mozilla.or=
+g/en-US/docs/Web/API/Web_Storage_API" target=3D"_blank" rel=3D"noopener">We=
+b Storage API</a> mechanisms provide the ability to store information in a
+      key-value format based on a particular user agent or origin. In this =
+activity, you will discover the purpose and
+      scope of the <strong>localStorage</strong> mechanism available throug=
+h the <a href=3D"https://developer.mozilla.org/en-US/docs/Web/API/Storage" =
+target=3D"_blank" rel=3D"noopener">Storage</a>
+      interface. You will use this knowledge to drive and display some traf=
+fic data from individual clients on a page.
+    </p>
+    <div class=3D"callout info">
+      <p>
+        The web storage data is saved in a SQLite file in a subfolder or fi=
+le in the user's profile folder.
+      </p>
+    </div>
+
+    <h3>Prepare</h3>
+    <p>Here are some comparison data between <strong>cookies</strong>,
+      <strong>localStorage</strong>, and <strong>sessionStorage</strong>.
+    </p>
+    <table>
+      <caption>Table 1: Local Storage Methods Comparison Chart</caption>
+      <tbody>
+        <tr>
+          <th scope=3D"col"></th>
+          <th scope=3D"col"><strong>Cookies</strong></th>
+          <th scope=3D"col"><strong>localStorage</strong></th>
+          <th scope=3D"col"><strong>sessionStorage</strong></th>
+        </tr>
+        <tr>
+          <th scope=3D"row"><strong>Capacity</strong></th>
+          <td>~4KB</td>
+          <td>~5MB</td>
+          <td>~5MB</td>
+        </tr>
+        <tr>
+          <th scope=3D"row"><strong>Expires</strong></th>
+          <td>Manually set</td>
+          <td>Never</td>
+          <td>On tab/windows close</td>
+        </tr>
+        <tr>
+          <th scope=3D"row"><strong>Accessible from</strong></th>
+          <td>Any window</td>
+          <td>Any Window</td>
+          <td>Same tab</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p>Each of these methods stores data with the actual user agent (browse=
+r) client and not on the
+      server.</p>
+
+    <h4>localStorage Advantages</h4>
+    <ul>
+      <li>This method is much more intuitive than using the older method of=
+ Cookies.</li>
+      <li>Only stores strings in key-value pairs.</li>
+      <li>The mechanism's data persists without expiring and is available e=
+ven when an agent is
+        closed and reopened again.</li>
+    </ul>
+
+    <div class=3D"callout info">
+      <p>
+        You can store non-string data in localStorage. One common approach =
+is to use the
+        <code>JSON.stringify()</code> method to convert the data to a strin=
+g before storing it, and
+        then use the <code>JSON.parse()</code> method to convert it back to=
+ its original form when
+        you
+        retrieve it from localStorage. This allows you to store and retriev=
+e more complex data
+        structures, such as objects and arrays, in localStorage.
+      </p>
+    </div>
+
+    <h4>localStorage Demonstration</h4>
+    <ul>
+      <li>Watch: <a href=3D"https://video.byui.edu/media/t/1_z77p3i7c" targ=
+et=3D"_blank" rel=3D"noopener">localStorage
+          Demonstration</a> =E2=80=93 Here is the corresponding <a href=3D"=
+https://codepen.io/BYU-Idaho/pen/ZYYEaEK" target=3D"_blank" rel=3D"noopener=
+">CodePen</a> used in demonstration.
+        <div class=3D"callout info">
+          <p>Fork (Copy) this Pen to your own CodePen account and play with=
+ the code.</p>
+        </div>
+      </li>
+    </ul>
+    <details>
+      <summary>What are some of the differences between session and local s=
+torage?</summary>
+      <p>One main difference is that localStorage data is persistent (remai=
+ns) even
+        when the browser session expires. Session variables do not.</p>
+    </details>
+    <details>
+      <summary>Using the Storage interface, what are some methods built int=
+o this interface object and what do they do?
+      </summary>
+      <p>Out of the entire method list [key(), getItem(), setItem(), remove=
+Item(),
+        clear()] the most common are <strong>getItem</strong>() and <strong=
+>setItem</strong>() which
+        you will be using in the assignments.<br>
+        <a href=3D"https://developer.mozilla.org/en-US/docs/Web/API/Storage=
+" target=3D"_blank" rel=3D"noopener">Storage
+          Interface of the Web Storage API</a>
+      </p>
+    </details>
+
+    <h3>Activity Overview</h3>
+
+    <p>This activity revisits the favorite Book of Mormon chapters exercise=
+. The chapters entered by the user do not
+      persist between visits to the application. In other words, they are n=
+ot stored anywhere. In this activity, you
+      will use localStorage to store the BOM chapter list for the user.</p>
+    <div class=3D"callout info">
+      <p>
+        The high level directions for this problem would be "<em>Enhance th=
+e favorite Book of Mormon chapters
+          application so that the users entries persist between visits to t=
+he application using the localStorage
+          API"</em>. Take on this challenge by first thinking about a solut=
+ion to this problem and then map it out on
+        paper.
+      </p>
+    </div>
+    <p>The directed plan is to create an <strong>array</strong> of valid bo=
+ok and chapter entries made by the user. Then
+      that array could be stored in localStorage as one large string using =
+JSON string using <a href=3D"https://developer.mozilla.org/en-US/docs/Web/J=
+avaScript/Reference/Global_Objects/JSON/stringify">JSON.stringify()</a>.
+      This means you need to load that array upon application load with the=
+ parsed data from localStorage,
+      <strong>IF</strong> the named localStorage component exists. Once loa=
+ded, you need to populate the list with the
+      stored values.
+    </p>
+    <p>So, instead of having two functions that basically do the same thing=
+, you will create a single function
+      that appends the favorite chapter list with the corresponding delete =
+button, once on load, and also when a new
+      entry is made.</p>
+
+    <h3>Activity Instructions</h3>
+    <div class=3D"callout warning">Note that the given code is just an exam=
+ple. You may have used
+      different variable names, etc. You should never just copy code.</div>
+    <ol>
+      <li>Make a <strong>copy</strong> of your <strong>BOM</strong> applica=
+tion, by copying the HTML, CSS, and
+        JavaScript from the previous learning activity into a <strong>week0=
+5</strong> folder.
+      </li>
+      <li>Open the JavaScript file. Declare an <strong>array</strong> named=
+ <code>chaptersArray</code> and assign it to
+        the results of a defined function named <code>getChapterList</code>=
+ (<em>This function does not exist,
+          yet</em>).
+      </li>
+      <li>In that same array variable declaration and assignment, add a com=
+pound OR condition to assign it an empty
+        array in case this is the user's first visit or if the localStorage=
+ item is missing.
+        <div class=3D"callout info">
+          <p>
+            This works because the function might not return anything, so i=
+t is <a href=3D"https://developer.mozilla.org/en-US/docs/Glossary/Falsy">fa=
+lsy</a> which means it will revert to
+            assigning the empty array to <code>chaptersArray</code>.
+          </p>
+        </div>
+        <details>
+          <summary>Example</summary>
+          <pre>        <code class=3D"js hljs language-javascript"><span cl=
+ass=3D"hljs-keyword">const</span> input =3D <span class=3D"hljs-variable la=
+nguage_">document</span>.<span class=3D"hljs-title function_">querySelector=
+</span>(<span class=3D"hljs-string">'#favchap'</span>);
+<span class=3D"hljs-keyword">const</span> button =3D <span class=3D"hljs-va=
+riable language_">document</span>.<span class=3D"hljs-title function_">quer=
+ySelector</span>(<span class=3D"hljs-string">'button'</span>);
+<span class=3D"hljs-keyword">const</span> list =3D <span class=3D"hljs-vari=
+able language_">document</span>.<span class=3D"hljs-title function_">queryS=
+elector</span>(<span class=3D"hljs-string">'#list'</span>);
+
+<span class=3D"hljs-keyword">let</span> chaptersArray =3D <span class=3D"hl=
+js-title function_">getChapterList</span>() || [];</code></pre>
+
+          <div class=3D"callout reference">
+            <strong>Code Explanations</strong><br>
+            <p>The first three lines establish references to the DOM elemen=
+ts that you will be using in the program.
+              Note that they only reference the HTML element objects, not a=
+ny properties.</p>
+            <p>The array declaration initializes the chaptersArray variable=
+ with the list of chapters returned by the
+              getChapterList() function <strong>or</strong> an empty array =
+if the function call returns
+              <strong>null</strong> or <strong>undefined</strong>.
+            </p>
+          </div>
+        </details>
+      </li>
+      <li>Now populate the displayed list of chapters. Use a <code>forEach<=
+/code> on the
+        <code>chaptersArray</code> to process each entry named <code>chapte=
+r</code>. Use an arrow
+        function within the loop to call a new defined function named <code=
+>displayList</code> and
+        pass it the argument of <code>chapter</code>. That way each entry w=
+ill be processed (i.e.,
+        appended to the list).
+        <details>
+          <summary>Example</summary>
+          <pre>              <code class=3D"js hljs language-javascript">ch=
+aptersArray.<span class=3D"hljs-title function_">forEach</span>(<span class=
+=3D"hljs-function"><span class=3D"hljs-params">chapter</span> =3D&gt;</span=
+> {
+  <span class=3D"hljs-title function_">displayList</span>(chapter);
+});</code></pre>
+        </details>
+      </li>
+      <li>Change the button click event listener to only do the following t=
+asks (the other tasks in that original
+        function will be used in a separate function named <code>displayLis=
+t</code>):
+        <ol class=3D"check">
+          <li>Check if the input is empty; if it is not empty, then ...</li=
+>
+          <li>Call <code>displayList</code> with the <code>input.value</cod=
+e> argument</li>
+          <li>Push the <code>input.value</code> into the <code>chaptersArra=
+y</code></li>
+          <li>Update the localStorage with the new array by calling a funct=
+ion named <code>setChapterList</code></li>
+          <li>Set the <code>input.value</code> to nothing</li>
+          <li>Set the focus back to the input.</li>
+        </ol>
+        <details>
+          <summary>Example with // code comments</summary>
+          <pre>        <code class=3D"js hljs language-javascript">button.<=
+span class=3D"hljs-title function_">addEventListener</span>(<span class=3D"=
+hljs-string">'click'</span>, <span class=3D"hljs-function">() =3D&gt;</span=
+> {
+  <span class=3D"hljs-keyword">if</span> (input.<span class=3D"hljs-propert=
+y">value</span> !=3D <span class=3D"hljs-string">''</span>) {  <span class=
+=3D"hljs-comment">// make sure the input is not empty</span>
+    <span class=3D"hljs-title function_">displayList</span>(input.<span cla=
+ss=3D"hljs-property">value</span>); <span class=3D"hljs-comment">// call th=
+e function that outputs the submitted chapter</span>
+    chaptersArray.<span class=3D"hljs-title function_">push</span>(input.<s=
+pan class=3D"hljs-property">value</span>);  <span class=3D"hljs-comment">//=
+ add the chapter to the array</span>
+    <span class=3D"hljs-title function_">setChapterList</span>(); <span cla=
+ss=3D"hljs-comment">// update the localStorage with the new array</span>
+    input.<span class=3D"hljs-property">value</span> =3D <span class=3D"hlj=
+s-string">''</span>; <span class=3D"hljs-comment">// clear the input</span>
+    input.<span class=3D"hljs-title function_">focus</span>(); <span class=
+=3D"hljs-comment">// set the focus back to the input</span>
+  }
+});</code></pre>
+        </details>
+      </li>
+      <li>Create the <code>displayList</code> defined function that receive=
+s one parameter named
+        <code>item</code>.
+      </li>
+      <li>Put all the code that builds a list item from the previous button=
+ click event listener
+        into this new <code>displayList</code> function and use the <code>i=
+tem</code> parameter as
+        the input. A
+        <code>deleteChapter</code> function will need to be called within t=
+he delete button click
+        event to remove the chapter from the array and localStorage.
+        <details>
+          <summary>Example: <code>displayList()</code></summary>
+          <pre>        <code class=3D"js hljs language-javascript"><span cl=
+ass=3D"hljs-keyword">function</span> <span class=3D"hljs-title function_">d=
+isplayList</span>(<span class=3D"hljs-params">item</span>) {
+  <span class=3D"hljs-keyword">let</span> li =3D <span class=3D"hljs-variab=
+le language_">document</span>.<span class=3D"hljs-title function_">createEl=
+ement</span>(<span class=3D"hljs-string">'li'</span>);
+  <span class=3D"hljs-keyword">let</span> deletebutton =3D <span class=3D"h=
+ljs-variable language_">document</span>.<span class=3D"hljs-title function_=
+">createElement</span>(<span class=3D"hljs-string">'button'</span>);
+  li.<span class=3D"hljs-property">textContent</span> =3D item; <span class=
+=3D"hljs-comment">// note the use of the displayList parameter 'item'</span=
+>
+  deletebutton.<span class=3D"hljs-property">textContent</span> =3D <span c=
+lass=3D"hljs-string">'=E2=9D=8C'</span>;
+  deletebutton.<span class=3D"hljs-property">classList</span>.<span class=
+=3D"hljs-title function_">add</span>(<span class=3D"hljs-string">'delete'</=
+span>); <span class=3D"hljs-comment">// this references the CSS rule .delet=
+e{width:fit-content;} to size the delete button</span>
+  li.<span class=3D"hljs-title function_">append</span>(deletebutton);
+  list.<span class=3D"hljs-title function_">append</span>(li);
+  deletebutton.<span class=3D"hljs-title function_">addEventListener</span>=
+(<span class=3D"hljs-string">'click'</span>, <span class=3D"hljs-keyword">f=
+unction</span> (<span class=3D"hljs-params"></span>) {
+    list.<span class=3D"hljs-title function_">removeChild</span>(li);
+    <span class=3D"hljs-title function_">deleteChapter</span>(li.<span clas=
+s=3D"hljs-property">textContent</span>); <span class=3D"hljs-comment">// no=
+te this new function that is needed to remove the chapter from the array an=
+d localStorage.</span>
+    input.<span class=3D"hljs-title function_">focus</span>(); <span class=
+=3D"hljs-comment">// set the focus back to the input</span>
+  });
+  <span class=3D"hljs-variable language_">console</span>.<span class=3D"hlj=
+s-title function_">log</span>(<span class=3D"hljs-string">'I like to copy c=
+ode instead of typing it out myself and trying to understand it.'</span>);
+}</code></pre>
+        </details>
+      </li>
+      <li>Define the <code>setChapterList</code> function to set the localS=
+torage item that you have already named. Use
+        <code>JSON.stringify()</code> to stringify the array.
+        <details>
+          <summary>Example: <code>setChapterList()</code></summary>
+          <pre>              <code class=3D"js hljs language-javascript"><s=
+pan class=3D"hljs-keyword">function</span> <span class=3D"hljs-title functi=
+on_">setChapterList</span>(<span class=3D"hljs-params"></span>) {
+  <span class=3D"hljs-variable language_">localStorage</span>.<span class=
+=3D"hljs-title function_">setItem</span>(<span class=3D"hljs-string">'myFav=
+BOMList'</span>, <span class=3D"hljs-title class_">JSON</span>.<span class=
+=3D"hljs-title function_">stringify</span>(chaptersArray));
+}</code></pre>
+        </details>
+      </li>
+      <li>Define the <code>getChapterList</code> function to get the localS=
+torage item. No parameter is needed. Since
+        this function returns to an awaiting array, you will need to use <c=
+ode>JSON.parse</code> on the string.
+        <details>
+          <summary>Example: <code>getChapterList()</code></summary>
+          <pre><code class=3D"js hljs language-javascript"><span class=3D"h=
+ljs-keyword">function</span> <span class=3D"hljs-title function_">getChapte=
+rList</span>(<span class=3D"hljs-params"></span>) {
+  <span class=3D"hljs-keyword">return</span> <span class=3D"hljs-title clas=
+s_">JSON</span>.<span class=3D"hljs-title function_">parse</span>(<span cla=
+ss=3D"hljs-variable language_">localStorage</span>.<span class=3D"hljs-titl=
+e function_">getItem</span>(<span class=3D"hljs-string">'myFavBOMList'</spa=
+n>));
+}</code></pre>
+        </details>
+      </li>
+      <li>Finally, define the <code>deleteChapter</code> function with a pa=
+rameter named
+        <code>chapter</code> that does three things.
+        <ol class=3D"check">
+          <li>Reformat the <code>chapter</code> parameter to get rid of the=
+ =E2=9D=8C that is passed on the
+            end of the chapter string when you called the <code>deleteChapt=
+er</code> function. Use <a href=3D"https://developer.mozilla.org/en-US/docs=
+/Web/JavaScript/Reference/Global_Objects/String/slice">string.slice()</a>
+            method to extract the last character.
+            <pre><code class=3D"js hljs language-javascript">chapter =3D ch=
+apter.<span class=3D"hljs-title function_">slice</span>(<span class=3D"hljs=
+-number">0</span>, chapter.<span class=3D"hljs-property">length</span> =E2=
+=80=93 <span class=3D"hljs-number">1</span>); <span class=3D"hljs-comment">=
+// this slices off the last character</span></code></pre>
+          </li>
+          <li>Redefine the <code>chaptersArray</code> array using the <a hr=
+ef=3D"https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Glo=
+bal_Objects/Array/filter" target=3D"_blank" rel=3D"noopener">array.filter</=
+a> method to return
+            everything except the chapter to be removed.
+            <pre><code class=3D"js hljs language-javascript">chaptersArray =
+=3D chaptersArray.<span class=3D"hljs-title function_">filter</span>(<span =
+class=3D"hljs-function">(<span class=3D"hljs-params">item</span>) =3D&gt;</=
+span> item !=3D=3D chapter);</code></pre>
+          </li>
+          <li>Call the <code>setChapterList</code> function to update the l=
+ocalStorage item.</li>
+        </ol>
+        <details>
+          <summary>Example: <code>deleteChapter()</code></summary>
+          <pre><code class=3D"js hljs language-javascript"><span class=3D"h=
+ljs-keyword">function</span> <span class=3D"hljs-title function_">deleteCha=
+pter</span>(<span class=3D"hljs-params">chapter</span>) {
+  chapter =3D chapter.<span class=3D"hljs-title function_">slice</span>(<sp=
+an class=3D"hljs-number">0</span>, chapter.<span class=3D"hljs-property">le=
+ngth</span> =E2=80=93 <span class=3D"hljs-number">1</span>);
+  chaptersArray =3D chaptersArray.<span class=3D"hljs-title function_">filt=
+er</span>(<span class=3D"hljs-function"><span class=3D"hljs-params">item</s=
+pan> =3D&gt;</span> item !=3D=3D chapter);
+  <span class=3D"hljs-title function_">setChapterList</span>();
+}</code></pre>
+        </details>
+      </li>
+    </ol>
+
+    <h3>Testing</h3>
+    <p>Test the application by adding and removing chapters. Hard refresh a=
+nd empty the cache and see if the chapters
+      persist. You can also erase all application localStorage content unde=
+r the <strong>Applications</strong> tab in
+      DevTools.
+    </p>
+
+    <div class=3D"callout reference">
+      <h4>Optional Resources</h4>
+      <ol>
+        <li>Video: <a href=3D"https://youtu.be/GihQAC1I39Q?si=3DM_OwWHklCjK=
+3mNfy" target=3D"_blank" rel=3D"noopener">JavaScript
+            Cookies vs localStorage vs Session Storage</a> =E2=80=93 Web De=
+v Simplified</li>
+        <li>A dynamic structured approach to this activity would be to use =
+<a href=3D"https://developer.mozilla.org/en-US/docs/Web/JavaScript/Referenc=
+e/Global_Objects/Set" target=3D"_blank" rel=3D"noopener">Set object</a> in =
+JavaScript. <strong>Set</strong> allows us to <strong>add</strong> and
+          <strong>delete</strong> items from the Set object as needed.
+        </li>
+        <li>Reference: <a href=3D"https://developer.mozilla.org/en-US/docs/=
+Web/API/Web_Storage_API" target=3D"_blank" rel=3D"noopener">Web Storage API=
+</a> =E2=80=93 MDN</li>
+        <li>The <a href=3D"https://developer.mozilla.org/en-US/docs/Web/API=
+/IndexedDB_API" target=3D"_blank" rel=3D"noopener">IndexedDB API</a> is a m=
+ore robust method of storing data on the client side and is more like
+          a database.</li>
+        <li>The <a href=3D"https://developer.mozilla.org/en-US/docs/Web/API=
+/Cache" target=3D"_blank" rel=3D"noopener">Cache
+            API</a> is a method of storing data that is specifically used f=
+or caching data for offline use.</li>
+
+      </ol>
+    </div>
+    <hr>
+    <nav>
+      <span><a href=3D"https://byui-cse.github.io/wdd131-ww-course/week05/i=
+ndex.html">Week 05 Home</a></span>
+    </nav>
+
+  </main>
+
+  <footer>
+    <p>Copyright =C2=A9 Brigham Young University-Idaho | All rights reserve=
+d</p>
+  </footer>
+ =20
+ =20
+
+
+</body></html>
+------MultipartBoundary--TESNdyfvhMdUDh6USGQWoCBla3A4tOvaF0RNfcT61q----
+Content-Type: image/svg+xml
+Content-Transfer-Encoding: quoted-printable
+Content-Location: https://byui-cse.github.io/wdd131-ww-course/images/byui-logo.svg
+
+<?xml version=3D"1.0" encoding=3D"UTF-8" standalone=3D"no"?>
+<svg
+   xmlns:dc=3D"http://purl.org/dc/elements/1.1/"
+   xmlns:cc=3D"http://creativecommons.org/ns#"
+   xmlns:rdf=3D"http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg=3D"http://www.w3.org/2000/svg"
+   xmlns=3D"http://www.w3.org/2000/svg"
+   viewBox=3D"0 0 2254.3066 1454.6"
+   height=3D"1454.6"
+   width=3D"2254.3066"
+   xml:space=3D"preserve"
+   id=3D"svg2"
+   version=3D"1.1"><metadata
+     id=3D"metadata8"><rdf:RDF><cc:Work
+         rdf:about=3D""><dc:format>image/svg+xml</dc:format><dc:type
+           rdf:resource=3D"http://purl.org/dc/dcmitype/StillImage" /></cc:W=
+ork></rdf:RDF></metadata><defs
+     id=3D"defs6"><clipPath
+       id=3D"clipPath18"
+       clipPathUnits=3D"userSpaceOnUse"><path
+         id=3D"path16"
+         d=3D"M 0,1090.947 H 1690.728 V 0 H 0 Z" /></clipPath></defs><g
+     transform=3D"matrix(1.3333333,0,0,-1.3333333,0,1454.6)"
+     id=3D"g10"><g
+       id=3D"g12"><g
+         clip-path=3D"url(#clipPath18)"
+         id=3D"g14"><g
+           transform=3D"translate(134.1191,999.5405)"
+           id=3D"g20"><path
+             id=3D"path22"
+             style=3D"fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:=
+none"
+             d=3D"m 0,0 -0.065,-357.733 c 0,-11.592 0.692,-15.716 -7.529,-2=
+0.831 -8.051,-4.987 -16.286,-5.81 -29.53,-8.071 0,0 -0.14,-0.01 -0.24,-0.03=
+1 -1.322,-0.335 -1.082,-5.333 0.24,-5.333 h 289.381 c 122.059,0 173.392,48.=
+442 173.392,123.987 0,55.869 -26.011,90.012 -77.515,102.848 -0.867,0.219 -0=
+.918,1.374 0,1.651 32.817,10.233 62.99,33.99 62.99,92.139 0,78.863 -53.285,=
+105.569 -169.507,105.569 l -278.644,0.003 c -1.319,0 -1.59,-4.987 -0.261,-5=
+.32 0.103,-0.02 0.239,-0.048 0.239,-0.048 13.255,-2.254 21.493,-3.076 29.53=
+3,-8.067 C 0.695,15.665 0,11.599 0,0 m 135.782,-300.322 v 85.939 c 0,5.762 =
+-0.699,10.03 -0.699,10.03 0,0 5.036,-0.699 10.054,-0.699 h 47.367 c 37.771,=
+0 83.996,0 83.996,-52.316 0,-38.693 -33.095,-52.276 -77.642,-52.276 h -53.7=
+31 c -5.07,0 -9.913,-0.75 -9.913,-0.75 0,0 0.568,5.156 0.568,10.072 m 0,170=
+.487 v 74.278 c 0,5.745 -0.829,10.198 -0.829,10.198 0,0 5.186,-0.829 10.222=
+,-0.829 h 55.995 c 42.629,0 67.637,-6.615 67.637,-45.349 0,-25.178 -15.529,=
+-47.647 -65.899,-47.647 h -57.733 c -5.039,0 -10.044,-0.644 -10.044,-0.644 =
+0,0 0.651,4.858 0.651,9.993" /></g><g
+           transform=3D"translate(1592.1731,999.53)"
+           id=3D"g24"><path
+             id=3D"path26"
+             style=3D"fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:=
+none"
+             d=3D"m 0,0 c 0,11.603 -0.651,15.676 7.55,20.773 8.063,4.991 16=
+.299,5.814 29.549,8.068 0,0 0.123,0.027 0.247,0.048 1.33,0.332 1.075,5.316 =
+-0.247,5.316 l -213.465,0.011 c -1.322,0 -1.582,-4.989 -0.24,-5.317 0.096,-=
+0.027 0.233,-0.052 0.233,-0.052 13.47,-1.692 19.766,-3.069 27.789,-8.064 8.=
+214,-5.09 7.516,-9.201 7.516,-20.793 v -214.986 c 0,-49.008 -28.056,-86.7 -=
+83.812,-86.7 -55.755,0 -83.832,37.692 -83.832,86.7 l 0.007,214.945 c 0,11.5=
+92 -0.678,15.727 7.529,20.821 8.051,4.984 14.744,6.228 27.775,8.071 0,0 0.1=
+58,0.027 0.247,0.048 1.343,0.329 1.083,5.316 -0.253,5.316 l -201.428,-0.01 =
+c -1.514,0 -1.199,-5.015 0.035,-5.286 0.144,-0.031 0.267,-0.062 0.267,-0.06=
+2 7.378,-0.455 12.421,-0.877 16.936,-4.734 6.722,-5.704 7.817,-12.514 7.817=
+,-24.113 l -0.013,-211.321 c 0,-101.895 55.742,-188.385 224.913,-188.385 16=
+9.158,0 224.88,86.49 224.88,188.385 z" /></g><g
+           transform=3D"translate(945.3645,607.5416)"
+           id=3D"g28"><path
+             id=3D"path30"
+             style=3D"fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:=
+none"
+             d=3D"M 0,0 C 1.343,0 1.617,4.998 0.315,5.323 0.171,5.354 0.027=
+,5.354 0.027,5.354 c -13.209,2.261 -21.444,3.083 -29.515,8.071 -8.2,5.124 -=
+7.523,9.239 -7.523,20.831 v 135.758 l 147.604,219.172 c 8.085,12.021 13.237=
+,18.297 19.896,23.884 1.124,0.959 3.837,2.751 5.489,3.802 6.09,3.053 8.433,=
+3.758 15.97,3.985 0,0 0.11,0.04 0.226,0.044 1.356,0.174 1.747,5.285 0.212,5=
+.285 l -199.071,0.018 c -1.616,0 -1.301,-5.204 0.096,-5.344 0.083,-0.003 0.=
+233,-0.052 0.233,-0.052 9.654,0 21.555,-0.089 19.636,-13.952 -1.123,-13.439=
+ -58.469,-96.422 -78.92,-127.934 -2.925,-4.505 -5.2,-9.17 -6.2,-14.836 -0.7=
+26,5.573 -4.22,11.263 -6.601,14.781 -28.487,42.409 -77.211,111.179 -78.619,=
+128.016 -1.171,14.385 9.969,13.974 19.626,13.974 0,0 0.133,0.044 0.26,0.054=
+ 1.374,0.13 1.885,5.293 0.253,5.293 l -209.045,-0.011 c -1.254,0 -1.107,-4.=
+812 0.12,-5.282 0.099,-0.041 0.257,-0.051 0.257,-0.051 8.926,-0.911 13.795,=
+-0.281 24.246,-5.385 1.23,-0.593 4.152,-2.532 5.276,-3.488 6.646,-5.597 10.=
+711,-10.76 18.817,-22.784 l 147.388,-218.253 0.01,-136.684 c 0,-11.592 0.68=
+5,-15.717 -7.533,-20.831 -8.037,-4.998 -16.275,-5.82 -29.508,-8.081 0,0 -0.=
+158,0 -0.257,-0.031 C -228.486,4.998 -228.233,0 -226.89,0 Z" /></g><g
+           transform=3D"translate(412.7331,400.8765)"
+           id=3D"g32"><path
+             id=3D"path34"
+             style=3D"fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:=
+none"
+             d=3D"m 0,0 c -24.815,0 -35.154,-3.337 -38.048,-7.064 -2.478,-3=
+.275 -6.191,-21.506 -6.191,-81.859 v -61.614 c 0,-52.967 3.713,-73.596 9.08=
+5,-79.405 7.464,-7.845 16.954,-10.737 38.477,-10.737 81.037,0 118.263,38.45=
+ 118.263,116.198 C 121.586,-61.216 78.971,0 0,0 M 116.622,-213.404 C 88.104=
+,-241.925 56.67,-254.313 3.744,-254.313 c -18.221,0 -47.572,0.829 -62.877,0=
+.829 -15.323,0 -34.322,-0.829 -52.516,-0.829 -1.25,0 -1.661,4.919 0.411,5.3=
+72 16.108,1.644 23.168,4.11 28.108,7.016 5.416,2.891 8.674,9.934 8.674,91.3=
+88 v 60.36 c 0,81.468 -3.258,88.909 -8.674,91.417 -4.94,2.891 -12,5.33 -28.=
+108,7.029 -2.072,0.398 -1.661,5.365 -0.411,5.365 18.194,0 37.193,-0.83 52.5=
+16,-0.83 15.305,0 53.347,0.83 71.955,0.83 83.12,0 143.068,-55.817 143.068,-=
+130.675 0,-35.983 -14.456,-71.129 -39.268,-96.363" /></g><g
+           transform=3D"translate(750.1722,363.6259)"
+           id=3D"g36"><path
+             id=3D"path38"
+             style=3D"fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:=
+none"
+             d=3D"m 0,0 -36.397,-99.652 h 73.195 z m 51.264,-217.062 c -1.2=
+19,0 -1.637,4.919 0,5.372 12.792,1.232 20.684,3.706 20.684,9.906 0,7.044 -5=
+.375,25.631 -28.964,85.216 h -85.555 c -19.46,-53.378 -24.003,-73.637 -24.0=
+03,-82.324 0,-7.434 5.782,-11.155 23.589,-12.798 1.634,-0.453 1.216,-5.372 =
+0,-5.372 h -84.795 c -1.25,0 -2.066,4.919 0,5.372 12.421,1.232 19.841,3.706=
+ 26.028,7.823 4.162,3.33 11.582,9.127 41.355,90.581 l 21.93,60.36 c 12.823,=
+34.736 26.483,70.733 36.819,102.981 0.819,2.871 13.223,2.871 14.042,0 12.41=
+4,-35.989 23.174,-65.334 37.651,-102.981 l 23.551,-60.36 c 32.242,-81.454 3=
+7.641,-87.662 43.41,-91.389 7.043,-4.57 13.264,-5.783 24.842,-7.015 1.603,-=
+0.453 1.241,-5.372 0,-5.372 z" /></g><g
+           transform=3D"translate(1139.3108,146.5636)"
+           id=3D"g40"><path
+             id=3D"path42"
+             style=3D"fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:=
+none"
+             d=3D"m 0,0 c -1.686,0 -1.686,4.919 0.411,5.372 16.1,1.644 23.1=
+57,4.11 28.104,7.016 4.96,2.891 8.653,9.934 8.653,91.388 v 25.645 h -156.30=
+5 v -25.645 c 0,-81.454 3.761,-88.497 8.708,-91.388 4.96,-2.906 11.962,-5.3=
+72 28.117,-7.016 C -80.229,4.919 -80.229,0 -81.475,0 h -105.051 c -1.254,0 =
+-1.651,4.919 0.432,5.372 16.1,1.644 23.17,4.11 28.103,7.016 5.358,2.891 8.6=
+88,9.934 8.688,91.388 v 60.36 c 0,81.468 -3.33,88.909 -8.688,91.417 -4.933,=
+2.891 -12.003,5.33 -28.103,7.029 -2.083,0.397 -1.686,5.365 -0.432,5.365 h 1=
+05.051 c 1.246,0 1.246,-4.968 -0.837,-5.365 -16.155,-1.699 -23.157,-4.138 -=
+28.117,-7.029 -4.947,-2.508 -8.708,-9.949 -8.708,-91.417 v -19.41 H 37.168 =
+v 19.41 c 0,81.468 -3.693,88.909 -8.653,91.417 -4.947,2.891 -12.004,5.33 -2=
+8.104,7.029 -2.097,0.397 -2.097,5.365 -0.411,5.365 h 104.619 c 1.644,0 1.64=
+4,-4.968 -0.405,-5.365 -16.175,-1.699 -23.198,-4.138 -28.179,-7.029 -4.933,=
+-2.508 -8.687,-9.949 -8.687,-91.417 v -60.36 c 0,-81.454 3.754,-88.497 8.68=
+7,-91.388 C 81.016,9.482 88.039,7.016 104.214,5.372 106.263,4.919 106.263,0=
+ 104.619,0 Z" /></g><g
+           transform=3D"translate(1463.4713,401.6981)"
+           id=3D"g44"><path
+             id=3D"path46"
+             style=3D"fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:=
+none"
+             d=3D"m 0,0 c -73.993,0 -98.398,-59.147 -98.398,-112.491 0,-67.=
+416 42.574,-129.831 108.716,-129.831 73.652,0 98.028,59.14 98.028,112.498 C=
+ 108.346,-62.47 66.176,0 0,0 m 2.083,-257.649 c -78.557,0 -134.819,58.318 -=
+134.819,133.176 0,71.122 56.262,139.765 140.643,139.765 78.933,0 134.778,-5=
+8.297 134.778,-133.154 0,-71.13 -55.845,-139.787 -140.602,-139.787" /></g><=
+g
+           transform=3D"translate(96.2659,514.6551)"
+           id=3D"g48"><path
+             id=3D"path50"
+             style=3D"fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:=
+none"
+             d=3D"m 0,0 c -1.908,0 -3.466,-1.552 -3.466,-3.446 0,-1.929 1.5=
+58,-3.49 3.466,-3.49 h 1486.911 c 1.925,0 3.48,1.561 3.48,3.49 0,1.894 -1.5=
+55,3.446 -3.48,3.446 z" /></g><g
+           transform=3D"translate(95.9509,146.6183)"
+           id=3D"g52"><path
+             id=3D"path54"
+             style=3D"fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:=
+none"
+             d=3D"m 0,0 c -1.237,0 -1.237,4.94 0.435,5.378 16.104,1.659 26.=
+877,4.104 31.841,7.03 4.964,2.884 8.677,9.907 8.677,91.355 v 60.36 c 0,81.4=
+27 -3.713,88.874 -8.677,91.375 -4.964,2.891 -15.737,5.344 -31.841,7.03 -1.6=
+72,0.411 -1.672,5.371 -0.435,5.371 h 111.631 c 1.24,0 1.652,-4.96 -0.411,-5=
+.371 -16.107,-1.686 -26.46,-4.139 -31.403,-7.03 -5.378,-2.501 -9.119,-9.948=
+ -9.119,-91.375 v -60.36 c 0,-81.448 3.741,-88.471 9.119,-91.355 C 84.76,9.=
+482 95.113,7.037 111.22,5.378 113.283,4.94 112.871,0 111.631,0 Z" /></g></g=
+></g></g></svg>
+------MultipartBoundary--TESNdyfvhMdUDh6USGQWoCBla3A4tOvaF0RNfcT61q----
+Content-Type: text/css
+Content-Transfer-Encoding: quoted-printable
+Content-Location: https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/vs2015.min.css
+
+@charset "utf-8";
+
+pre code.hljs { display: block; overflow-x: auto; padding: 1em; }
+
+code.hljs { padding: 3px 5px; }
+
+.hljs { background: rgb(30, 30, 30); color: rgb(220, 220, 220); }
+
+.hljs-keyword, .hljs-literal, .hljs-name, .hljs-symbol { color: rgb(86, 156=
+, 214); }
+
+.hljs-link { color: rgb(86, 156, 214); text-decoration: underline; }
+
+.hljs-built_in, .hljs-type { color: rgb(78, 201, 176); }
+
+.hljs-class, .hljs-number { color: rgb(184, 215, 163); }
+
+.hljs-meta .hljs-string, .hljs-string { color: rgb(214, 157, 133); }
+
+.hljs-regexp, .hljs-template-tag { color: rgb(154, 83, 52); }
+
+.hljs-formula, .hljs-function, .hljs-params, .hljs-subst, .hljs-title { col=
+or: rgb(220, 220, 220); }
+
+.hljs-comment, .hljs-quote { color: rgb(87, 166, 74); font-style: italic; }
+
+.hljs-doctag { color: rgb(96, 139, 78); }
+
+.hljs-meta, .hljs-meta .hljs-keyword, .hljs-tag { color: rgb(155, 155, 155)=
+; }
+
+.hljs-template-variable, .hljs-variable { color: rgb(189, 99, 197); }
+
+.hljs-attr, .hljs-attribute { color: rgb(156, 220, 254); }
+
+.hljs-section { color: gold; }
+
+.hljs-emphasis { font-style: italic; }
+
+.hljs-strong { font-weight: 700; }
+
+.hljs-bullet, .hljs-selector-attr, .hljs-selector-class, .hljs-selector-id,=
+ .hljs-selector-pseudo, .hljs-selector-tag { color: rgb(215, 186, 125); }
+
+.hljs-addition { background-color: rgb(20, 66, 18); display: inline-block; =
+width: 100%; }
+
+.hljs-deletion { background-color: rgb(102, 0, 0); display: inline-block; w=
+idth: 100%; }
+------MultipartBoundary--TESNdyfvhMdUDh6USGQWoCBla3A4tOvaF0RNfcT61q----
+Content-Type: text/css
+Content-Transfer-Encoding: quoted-printable
+Content-Location: https://byui-cse.github.io/wdd131-ww-course/styles/course.css
+
+@charset "utf-8";
+
+:root { --alink: #0000ee; --avisited: #551a8b; --lightgray: rgb(240, 240, 2=
+40); --gray: rgb(150, 150, 150); --darkgray: rgb(50, 50, 50); --byuiblue: r=
+gb(0, 110, 182); --navy: rgb(0, 0, 128); --red: rgb(182, 0, 19); --purple: =
+rgb(103, 48, 155, .2); --mustard: rgb(182, 163, 0); --callout: rgb(230, 243=
+, 254); --error: rgb(255, 215, 225); --warning: rgb(255, 255, 225); --detai=
+ls: rgb(238, 254, 238); --padd: 0.5rem; --bord: 1px solid rgba(0, 0, 0, 0.1=
+); }
+
+body { font: 400 16px / 1.5 Montserrat, Helvetica, sans-serif; margin: 0px;=
+ -webkit-font-smoothing: antialiased; }
+
+.page { max-width: 960px; margin: 0px auto; padding: 0.5rem; }
+
+h1, h2, h3, h4, h5 { margin: 0px; }
+
+h1 { color: rgb(255, 255, 255); font-size: 1.1rem; margin-left: 1rem; font-=
+weight: normal; }
+
+#coursetitle { display: none; }
+
+h2 { font-size: 1.6rem; margin: 1.2rem 0.25rem; }
+
+h3 { font-size: 1.4rem; margin: 1.5rem 0.5rem 0px; }
+
+h3:not(:first-of-type) { margin: 2.5rem 0.5rem 0px; }
+
+h4 { font-size: 1.2rem; margin: 0.75rem; color: rgb(85, 85, 85); }
+
+h5 { font-size: 1rem; color: var(--navy); margin: 0.75rem 1.2rem; }
+
+a { color: var(--navy); }
+
+a:link { color: var(--alink); }
+
+a:active { color: var(--red); }
+
+a:visited, a:focus { color: var(--avisited); }
+
+p { margin: 1rem; }
+
+h4 + p { margin-left: 1.25rem; }
+
+h5 ~ p { margin-left: 1.5rem; }
+
+ol ol, ul ul { margin-top: 1rem; }
+
+li { margin-bottom: 0.5rem; }
+
+li ul li:nth-child(1) { margin-top: 0.5rem; }
+
+li ul li, li ol li { margin-bottom: 0.5rem; }
+
+li p { margin: 0px; }
+
+img { max-width: 100%; height: auto; }
+
+header { background-color: var(--byuiblue); padding: 0.5rem; }
+
+.logo { width: 50px; height: auto; background-color: rgb(0, 0, 0); padding:=
+ 12px 11px; position: absolute; top: 0px; right: 0px; }
+
+main { margin: 1.5rem 1rem; }
+
+nav { display: flex; width: fit-content; flex-wrap: wrap; }
+
+nav span { font-size: 0.8rem; font-weight: 700; background-color: var(--lig=
+htgray); margin: 0px 0.25rem 0.25rem; text-align: center; }
+
+nav span a:link, nav span a:visited, nav span a:active, nav span a:focus { =
+color: rgb(0, 0, 0); text-decoration: none; display: block; padding: 0.5rem=
+ 1rem; order: var(--bord); }
+
+nav span a:hover { background-color: var(--byuiblue); color: rgb(255, 255, =
+255); }
+
+footer { border-top: var(--bord); font-size: smaller; background-color: var=
+(--lightgray); padding: 0.5rem; text-align: center; }
+
+footer p { margin: 0px 0px 0px 0.5rem; }
+
+details { margin: 1rem 2rem; border: var(--bord); padding: 0.5rem; color: r=
+gb(0, 0, 0); background-color: var(--details); }
+
+details p { margin: 0.5rem 0px 0px 0.5rem; }
+
+.clo { margin: 1rem 0.25rem; }
+
+pre { line-height: 1.2; margin: 0.5rem; }
+
+details pre code { border-left: 3px solid rgb(150, 150, 150); }
+
+code { font-weight: 700; color: rgb(1, 100, 1); }
+
+.html, .css, .javascript, .cli { font-weight: 400; padding: 0.75rem; }
+
+.character { color: rgb(1, 100, 1); font-size: smaller; }
+
+kbd { color: red; }
+
+mark { padding: 0.5rem; font-style: italic; }
+
+mark::before { content: "=E2=9A=92=EF=B8=8F"; }
+
+figure { margin: 1rem 0px; text-align: center; }
+
+figcaption { font-size: smaller; margin: 0px 0px 1rem; }
+
+.video-container { position: relative; overflow: hidden; height: 0px; paddi=
+ng-bottom: calc(var(--aspect-ratio, 0.5625) * 90%); margin: 0.5em auto; wid=
+th: 90%; }
+
+.video-container iframe { position: absolute; top: 0px; left: 0px; width: 1=
+00%; height: 100%; }
+
+table { border-collapse: collapse; margin: 1rem auto; width: 80%; border: v=
+ar(--bord); background-color: var(--lightgray); }
+
+table caption { color: var(--navy); font-weight: 700; }
+
+th { background-color: var(--darkgray); color: rgb(255, 255, 255); }
+
+th, td { border: var(--bord); padding: 0.5rem; text-align: center; }
+
+.active { background-color: rgb(0, 0, 0); color: rgb(255, 255, 255); text-d=
+ecoration: none; }
+
+.active a:link, .active a:visited, .active a:active, .active a:focus { colo=
+r: rgb(255, 255, 255); }
+
+td.detailed-text-cell { text-align: left; font-size: 90%; }
+
+td.detailed-text-cell ul, td.detailed-text-cell ol { padding-left: 1rem; ma=
+rgin-top: 0.25rem; margin-bottom: 0.25rem; }
+
+td.detailed-text-cell li { margin-bottom: 0.1rem; }
+
+.team::after { content: " =F0=9F=91=A5"; }
+
+.callout { margin: 1rem; border: var(--bord); padding: 0.5rem; color: rgb(0=
+, 0, 0); }
+
+.callout p { margin: 0.5rem; }
+
+.reference { background-color: var(--lightgray); margin-left: 1.5rem; margi=
+n-right: 1.5rem; }
+
+.info { background-color: var(--callout); }
+
+.error { background-color: var(--error); }
+
+.warning { background-color: var(--warning); }
+
+.ai { position: relative; font-stretch: expanded; background-color: var(--d=
+arkgray); color: rgb(255, 255, 255); background-image: url("../images/ai.pn=
+g"); background-repeat: no-repeat; background-position: calc(100% - 10px) c=
+alc(100% - 10px); background-size: 35px; }
+
+.ai a:link, .ai a:visited, .ai a:active, .ai a:focus { color: yellow; }
+
+.discussion { background-color: var(--details); }
+
+.discussion h5 { color: var(--black); }
+
+.question { color: var(--navy); border-top: var(--bord); }
+
+.strip { border-left: none; border-right: none; }
+
+.disciples { position: relative; background-color: var(--disciples); backgr=
+ound-image: url("../images/disciples.png"); background-repeat: no-repeat; b=
+ackground-position: calc(100% - 10px) calc(100% - 10px); background-size: 3=
+5px; }
+
+blockquote { border-left: 3px solid var(--darkgray); }
+
+.smaller { font-size: smaller; }
+
+.bold700 { font-weight: 700; }
+
+.floatright { float: right; margin: 0px 0px 0.5rem 0.5rem; }
+
+.step-reset { counter-reset: step 0; }
+
+.step { counter-increment: step 1; }
+
+.step::before { content: "Step " counter(step) ":  "; color: var(--navy); }
+
+.part-reset { counter-reset: part 0; }
+
+.part { counter-increment: part 1; margin-left: 1rem; }
+
+.part::before { content: "Part " counter(part) ":  "; font-size: x-large; c=
+olor: var(--navy); }
+
+.check { list-style: "=E2=9C=93 "; }
+
+.grid-table { display: grid; grid-template-columns: 1fr 2fr 1fr 1fr; gap: 0=
+px; border: 1px solid rgba(0, 0, 0, 0.2); }
+
+.grid-table > div { padding: 0.5rem; border-right: 1px solid rgba(0, 0, 0, =
+0.2); border-bottom: 1px solid rgba(0, 0, 0, 0.2); text-align: center; }
+
+.grid-table > .header { background-color: var(--darkgray); color: rgb(255, =
+255, 255); padding: 0.5rem; text-align: center; }
+
+.grid-table > .regular { background-color: rgb(255, 255, 255); }
+
+.grid-table > .zebra { background-color: var(--lightgray); }
+
+#weeks { list-style: none; padding-left: 1rem; }
+
+#weeks li { margin-left: 0px; margin-right: 1rem; border: 1px solid rgba(0,=
+ 0, 0, 0.1); padding: 0.25rem 0.5rem; }
+
+#weeks li a { display: block; text-decoration: none; color: rgb(0, 0, 0); }
+
+#weeks li:hover { background-color: var(--byuiblue); }
+
+#weeks li a:hover { font-weight: 700; text-decoration: underline; color: rg=
+b(255, 255, 255); }
+
+@media screen and (min-width: 600px) {
+  .page { position: relative; }
+  .logo { width: 75px; padding: 18px 15px; top: -0.5rem; right: 1rem; }
+  h1 { font-size: 1.3rem; }
+  #coursetitle { display: inline; }
+}
+
+@media screen and (min-width: 800px) {
+  .logo { width: 100px; padding: 22px 20px; }
+  h1 { font-size: 1.75rem; margin-left: 0px; }
+}
+------MultipartBoundary--TESNdyfvhMdUDh6USGQWoCBla3A4tOvaF0RNfcT61q----
+Content-Type: text/css
+Content-Transfer-Encoding: quoted-printable
+Content-Location: https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap
+
+@charset "utf-8";
+
+@font-face { font-family: Montserrat; font-style: normal; font-weight: 400;=
+ font-display: swap; src: url("https://fonts.gstatic.com/s/montserrat/v31/J=
+TUSjIg1_i6t8kCHKm459WRhyzbi.woff2") format("woff2"); unicode-range: U+460-5=
+2F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F; }
+
+@font-face { font-family: Montserrat; font-style: normal; font-weight: 400;=
+ font-display: swap; src: url("https://fonts.gstatic.com/s/montserrat/v31/J=
+TUSjIg1_i6t8kCHKm459W1hyzbi.woff2") format("woff2"); unicode-range: U+301, =
+U+400-45F, U+490-491, U+4B0-4B1, U+2116; }
+
+@font-face { font-family: Montserrat; font-style: normal; font-weight: 400;=
+ font-display: swap; src: url("https://fonts.gstatic.com/s/montserrat/v31/J=
+TUSjIg1_i6t8kCHKm459WZhyzbi.woff2") format("woff2"); unicode-range: U+102-1=
+03, U+110-111, U+128-129, U+168-169, U+1A0-1A1, U+1AF-1B0, U+300-301, U+303=
+-304, U+308-309, U+323, U+329, U+1EA0-1EF9, U+20AB; }
+
+@font-face { font-family: Montserrat; font-style: normal; font-weight: 400;=
+ font-display: swap; src: url("https://fonts.gstatic.com/s/montserrat/v31/J=
+TUSjIg1_i6t8kCHKm459Wdhyzbi.woff2") format("woff2"); unicode-range: U+100-2=
+BA, U+2BD-2C5, U+2C7-2CC, U+2CE-2D7, U+2DD-2FF, U+304, U+308, U+329, U+1D00=
+-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, =
+U+2C60-2C7F, U+A720-A7FF; }
+
+@font-face { font-family: Montserrat; font-style: normal; font-weight: 400;=
+ font-display: swap; src: url("https://fonts.gstatic.com/s/montserrat/v31/J=
+TUSjIg1_i6t8kCHKm459Wlhyw.woff2") format("woff2"); unicode-range: U+0-FF, U=
++131, U+152-153, U+2BB-2BC, U+2C6, U+2DA, U+2DC, U+304, U+308, U+329, U+200=
+0-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+
+@font-face { font-family: Montserrat; font-style: normal; font-weight: 700;=
+ font-display: swap; src: url("https://fonts.gstatic.com/s/montserrat/v31/J=
+TUSjIg1_i6t8kCHKm459WRhyzbi.woff2") format("woff2"); unicode-range: U+460-5=
+2F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F; }
+
+@font-face { font-family: Montserrat; font-style: normal; font-weight: 700;=
+ font-display: swap; src: url("https://fonts.gstatic.com/s/montserrat/v31/J=
+TUSjIg1_i6t8kCHKm459W1hyzbi.woff2") format("woff2"); unicode-range: U+301, =
+U+400-45F, U+490-491, U+4B0-4B1, U+2116; }
+
+@font-face { font-family: Montserrat; font-style: normal; font-weight: 700;=
+ font-display: swap; src: url("https://fonts.gstatic.com/s/montserrat/v31/J=
+TUSjIg1_i6t8kCHKm459WZhyzbi.woff2") format("woff2"); unicode-range: U+102-1=
+03, U+110-111, U+128-129, U+168-169, U+1A0-1A1, U+1AF-1B0, U+300-301, U+303=
+-304, U+308-309, U+323, U+329, U+1EA0-1EF9, U+20AB; }
+
+@font-face { font-family: Montserrat; font-style: normal; font-weight: 700;=
+ font-display: swap; src: url("https://fonts.gstatic.com/s/montserrat/v31/J=
+TUSjIg1_i6t8kCHKm459Wdhyzbi.woff2") format("woff2"); unicode-range: U+100-2=
+BA, U+2BD-2C5, U+2C7-2CC, U+2CE-2D7, U+2DD-2FF, U+304, U+308, U+329, U+1D00=
+-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, =
+U+2C60-2C7F, U+A720-A7FF; }
+
+@font-face { font-family: Montserrat; font-style: normal; font-weight: 700;=
+ font-display: swap; src: url("https://fonts.gstatic.com/s/montserrat/v31/J=
+TUSjIg1_i6t8kCHKm459Wlhyw.woff2") format("woff2"); unicode-range: U+0-FF, U=
++131, U+152-153, U+2BB-2BC, U+2C6, U+2DA, U+2DC, U+304, U+308, U+329, U+200=
+0-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+------MultipartBoundary--TESNdyfvhMdUDh6USGQWoCBla3A4tOvaF0RNfcT61q------

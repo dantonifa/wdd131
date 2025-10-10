@@ -1,0 +1,92 @@
+/* Styles for Book of Mormon Top 10 List */
+
+body {
+	height: 100vh;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	font-family: Acme, Arial, sans-serif;
+}
+
+h1 {
+	font-size: 40px;
+	margin-top: 30px;
+}
+
+main {
+	margin: 1rem auto;
+	border: 1px solid rgb(0 0 0 / 0.1);
+	padding: 1rem;
+	background-color: #ddd;
+	display: flex;
+	flex-direction: column;
+	width: 500px;
+	box-shadow: 0 0 10px rgb(0 0 0 / 0.1);
+	border-radius: 8px;
+}
+#bom-container {
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+}
+#favchap-label {
+	margin-bottom: 0.5rem;
+	font-size: 30px;
+	font-weight: bold;
+}
+#favchap {
+	font-size: 30px;
+	padding: 0.5rem;
+	margin-bottom: 1rem;
+	border: 1px solid rgb(0 0 0 / 0.2);
+	border-radius: 4px;
+}
+#add-chapter {
+	font-size: 30px;
+	padding: 0.5rem;
+	border: none;
+	background-color: #4CAF50;
+	color: black;
+	font-weight: bold;
+	border-radius: 4px;
+	cursor: pointer;
+	transition: background-color 0.3s ease;
+}
+
+input,
+button {
+	padding: 0.5rem;
+}
+
+button {
+	margin: 0.5rem;
+}
+
+.delete {
+	width: fit-content;
+}
+
+.input {
+	font-size: 30px;
+	padding: 0.5rem;
+	display: flex;
+	gap: 1rem;
+}
+
+.list {
+	margin-top: 1rem;
+	padding: 0.5rem;
+}
+
+ul {
+	margin: 1rem;
+	list-style: none;
+}
+
+li {
+	padding: 0.5rem;
+	font-size: 30px;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
