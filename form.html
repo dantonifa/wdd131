@@ -3,8 +3,8 @@
     <head>
         <meta charset="UTF-8">
         <title>WDD 131 - Dynamic Web Fundamentals W05 Assignment: Product Review Form</title>
-        <meta name = "description" content = "Product Review Form, product review form page: I used good form design, be given specific field requirements, and 
-        included a submission confirmation with a counter.">
+        <meta name = "description" content = "Product Review Form, I used good form design, be given specific field requirements, and included a submission confirmation with a counter.">
+        <meta name = "Student name" content = "David Antonio Fajardo Ponce">
         <meta name = "author" content = "Student name: David Antonio Fajardo Ponce">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta property="og:title" content="David Antonio Fajardo Ponce - WDD 131 - Dynamic Web Fundamentals">
@@ -19,7 +19,6 @@
         <link rel="stylesheet" href="styles/normalize.css">
         <link rel="stylesheet" href="styles/form-larger-view.css">
         <link rel="stylesheet" href="styles/form-mobile-view.css">
-        <script src="scripts/toggle.js"></script>
     </head>
     <body>
         <header>
@@ -32,7 +31,10 @@
         <main>
             <form method="get" action="review.html">
                 <fieldset>
-                    <legend>
+                    <div id="formmessage">
+                        <p class="smaller"> ✸ Indicates a required field</p>
+                    </div>
+                    <legend for="product" class="req" id="product-legend">
                         Product Name
                     </legend>
                     <div class="dropdown">
@@ -42,7 +44,7 @@
                     </div>
                 </fieldset>
                 <fieldset>
-                    <legend>
+                    <legend for="rating" class="req">
                         Overall Rating
                     </legend>
                     <div class="rating">
@@ -64,7 +66,7 @@
                     </div>
                 </fieldset>
                 <fieldset>
-                    <legend>
+                    <legend for="date" class="req">
                         Date of Installation
                     </legend>
                     <input type="date" id="date" name="date" title="Enter the date of installation" required>
@@ -96,7 +98,7 @@
                 </fieldset>
                 <fieldset>
                     <legend>
-                        Your Name <span class="optional">(Optional)</span>
+                        Your Name <span class="optional"></span>
                     </legend>
                     <div class="your-name">
                         <input type="text" id="name" name="name" title="Enter your name here" required>
@@ -127,6 +129,7 @@
             <script src="scripts/form.js" defer></script>
 </body>
 </html>
+
 
 
 
