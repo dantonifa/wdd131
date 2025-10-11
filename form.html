@@ -16,6 +16,7 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Sour+Gummy:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+        <link rel="stylesheet" href="styles/normalize.css">
         <link rel="stylesheet" href="styles/form-larger-view.css">
         <link rel="stylesheet" href="styles/form-mobile-view.css">
     </head>
@@ -37,8 +38,9 @@
                         Product Name
                     </legend>
                     <div class="dropdown">
+                        <!--Show the phrase "Choose a Product" in the input button-->
                         <select id="product" title="Choose a Product">
-                            <option value="choose_a_product" disabled>Choose a Product</option>
+                            <option value="choose_a_product" disabled selected>Choose a Product</option>
                         </select>
                     </div>
                 </fieldset>
@@ -87,25 +89,22 @@
                     </div>
                 </fieldset>
                 <fieldset>
-                    <legend>
-                        Written Review <span class="optional">(Optional)</span>
+                <!--Add a fieldset for the written optional review-->
+                    <legend for="review">
+                        Write your review here (optional)
                     </legend>
-                    <div class="review">
-                        <textarea id="comments" name="comments" title="Enter your comments here" required>
-                        </textarea>
-                    </div>
+                    <textarea id="review" name="review" title="Write your review here..."></textarea>
                 </fieldset>
+                    <!--Add a button to input your name, required for form submission-->  
                 <fieldset>
-                    <legend>
-                        Your Name <span class="optional"></span>
+                    <legend for="name" class="req">
+                        Your Name
                     </legend>
-                    <div class="your-name">
-                        <input type="text" id="name" name="name" title="Enter your name here" required>
-                    </div>
+                    <input type="text" id="name" name="name" title="Enter your name here" required>
                 </fieldset>
-                    <div class="submit">
-                        <input type="submit" id="post-review" value="Post Review" title="Submit your review">
-                    </div>
+                <div class="submit">
+                    <input type="submit" id="post-review" value="Post Review" title="Submit your review">
+                </div>
             </form>
         </main>
         <footer>
@@ -123,11 +122,19 @@
                     Last Modified: <span  id="lastModified"></span>
                     </p>
                 </div>
+                <!---Number of reviews submitted by the user client-->
+                <div id="review_count">
+                    <p>
+                        Number of reviews submitted: <span id="review-count">0</span>
+                    </p>
+                </div>
             </footer>
             <script src="scripts/getdates.js" defer></script>
             <script src="scripts/form.js" defer></script>
 </body>
 </html>
+
+
 
 
 
