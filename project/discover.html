@@ -12,7 +12,9 @@
     <meta name="description" content="WDD 131: Dynamic Web Fundamentals-David Antonio Fajardo, course assignment portal">
     <meta name="author" content="David Antonio Fajardo">
     <link rel="stylesheet" href="styles/discover-large.css">
+    <link rel="stylesheet" href="styles/discover-mobile.css">
     <script src="scripts/getdates.js" defer></script>
+    <script src="scripts/project.js" defer></script>
 </head>
 <body>
     <header>
@@ -20,11 +22,12 @@
         <h1>
            INSTITUTO PRIVADO SALVADOR MONCADA
         </h1>
-        <nav>
+        <button id="menu"></button>
+        <nav id="nav-container">
             <ul>
-                <li><a href="https://dantonifa.github.io/wdd131/index.html">HOME</a></li>
-                <li><a href="discover.html">DISCOVER</a></li>
-                <li><a href="register.html">REGISTER</a></li>
+                <li><a href="file:///C:/Users/David%20Antonio/Documents/BYU/wdd131/index.html">HOME</a></li>
+                <li><a href="file:///C:/Users/David%20Antonio/Documents/BYU/wdd131/project/discover.html">DISCOVER</a></li>
+                <li><a href="file:///C:/Users/David%20Antonio/Documents/BYU/wdd131/project/register.html">REGISTER</a></li>
             </ul>
         </nav>
     </header>
@@ -75,17 +78,25 @@
         </section>
     </main>
     <footer>
-        <p>
-            ©
-            <span id="currentyear"></span> | David Antonio Fajardo | Honduras
-        </p>
-        <p>
-            Last Modified: <span id="lastModified"><script></script> 
-            </span>
-        </p>
+        <div id="flag-container">
+            <div id="text">
+                <p>
+                    &copy;<span id="currentyear"></span>| David Antonio Fajardo Ponce | Honduras
+                </p>
+            </div>
+            <div id="flag">
+                <img src = "images/Honduras_flag.webp" alt = "Honduras Flag">
+            </div>
+        </div>
+        <div id="last_modified">
+            <p>
+            Last Modified: <span id="lastModified"></span>
+            </p>
+        </div>
     </footer>
 </body>
 </html>
+
 
 
 
