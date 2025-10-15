@@ -10,20 +10,24 @@
     <title>WDD 131 - Dynamic Web Fundamentals - Final Project: Instituto Salvador Moncada</title>
     <meta name="description" content="WDD 131: Dynamic Web Fundamentals-David Antonio Fajardo, course assignment portal">
     <meta name="author" content="David Antonio Fajardo">
+    <meta name="Student name" content="David Antonio Fajardo Ponce">
     <link rel="stylesheet" href="styles/project-large.css">
+    <link rel="stylesheet" href="styles/project-mobile.css">
     <script src="scripts/getdates.js" defer></script>
+    <script src="scripts/project.js" defer></script>
 </head>
 <body>
     <header>
-        <img id="ism-logo" src="images/ism-logo.webp" alt="Instituto Privado Salvador Moncada Logo">
+        <img src="images/ism-logo.webp" alt="Instituto Privado Salvador Moncada Logo">
         <h1>
            INSTITUTO PRIVADO SALVADOR MONCADA
         </h1>
-        <nav>
+        <button id="menu"></button>
+        <nav id="nav-container">
             <ul>
-                <li><a href="https://dantonifa.github.io/wdd131/index.html">HOME</a></li>
-                <li><a href="discover.html">DISCOVER</a></li>
-                <li><a href="register.html">REGISTER</a></li>
+            <li><a href="file:///C:/Users/David%20Antonio/Documents/BYU/wdd131/index.html">HOME</a></li>
+            <li><a href="file:///C:/Users/David%20Antonio/Documents/BYU/wdd131/project/discover.html">DISCOVER</a></li>
+            <li><a href="file:///c%3A/Users/David%20Antonio/Documents/BYU/wdd131/project/webpage-project.html">WEB PROJECT</a></li>
             </ul>
         </nav>
     </header>
@@ -67,17 +71,30 @@
         </section>
     </main>
     <footer>
-        <p>
-            ©
-            <span id="currentyear"></span> | David Antonio Fajardo | Honduras
-        </p>
-        <p>
-            Last Modified: <span id="lastModified"><script></script> 
-            </span>
-        </p>
+        <div id="flag-container">
+            <div id="text">
+                <p>
+                    &copy;<span id="currentyear"></span> | David Antonio Fajardo Ponce | Honduras            
+                </p>            
+            </div>                        
+            <div id="flag"></div>                        
+                <img src = "images/Honduras_flag.webp" alt = "Honduras Flag">            
+            </div>            
+            <div id="last_modified">
+                <p>
+                Last Modified: <span  id="lastModified"></span>
+                </p>
+        </div>
+                <!---Number of reviews submitted by the user client-->
+        <div id="review_count">
+            <p>
+                Number of reviews submitted: <span id="review-count">0</span>
+            </p>
+        </div>
     </footer>
-    </body>
-    </html>
+</body>
+</html>
+
 
 
 
